@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-primary: 'Inter', sans-serif;
+  --color-primary-500: #3d9a50;
+  --color-primary-400: #5BD793;
+
+  --color-secondary-500: #5603AD ;
+  --color-secondary-400: #8367C7 ;
+
+  --color-error-500: #CD2B31;
+  --color-error-400: #E5484D ;
+
+  --color-warning-500: #FFDF00;
+  --color-warning-400: #FFE747;
+
+  --color-gray-900: #121214 ;
+  --color-gray-700: #202024;
+  --color-gray-500: #74767D;
+  --color-gray-400: #7F8189;
+  --color-gray-200: #F0FFF1;
+}
+
+
+
+[data-theme="light"] {
+  --color-primary-500: #3d9a50;
+  --color-primary-400: ##5BD793;
+}
