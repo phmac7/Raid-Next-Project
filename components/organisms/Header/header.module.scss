@@ -1,0 +1,35 @@
+.header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100vw;
+  height: 92px;
+  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-gray-900);
+
+  &__searchInput {
+    width: 500px;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color-gray-700);
+  }
+
+  &__userInfo {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  }
+
+  &__userPicture {
+    border-radius: 50%;
+  }
+
+  &__userName {
+    margin-right: 16px;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-gray-200);
+  }
+}
