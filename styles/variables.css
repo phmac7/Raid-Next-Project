@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
+  /* FONTS */
   --font-primary: 'Inter', sans-serif;
+
+  /* COLORS */
   --color-primary-500: #3d9a50;
   --color-primary-400: #5BD793;
 
@@ -19,6 +22,20 @@
   --color-gray-500: #74767D;
   --color-gray-400: #7F8189;
   --color-gray-200: #F0FFF1;
+
+  /* BREAKPOINTS */
+  
+  --xs-breakpoint: 0;
+  --sm-breakpoint: 576px;
+  --md-breakpoint: 768px;
+  --lg-breakpoint: 992px;
+  --xl-breakpoint: 1280px;
+  --xxl-breakpoint: 1440px;
+
+  /* GRID */
+  --column-count: 12;
+  --gutter-size: 1.6rem;
+
 }
 
 
