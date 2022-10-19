@@ -1,5 +1,6 @@
 import * as NextImage from "next/image";
-import { themes } from "@storybook/theming";
+import "@/styles/variables.css";
+import "@/styles/globals.scss";
 
 const OriginalNextImage = NextImage.default;
 
@@ -9,6 +10,13 @@ Object.defineProperty(NextImage, "default", {
 });
 
 export const parameters = {
+  backgrounds: {
+    default: "dark",
+    values: [
+      { name: "dark", value: "#202024" },
+      { name: "light", value: "#f0f0f0" },
+    ],
+  },
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
@@ -17,6 +25,6 @@ export const parameters = {
     },
   },
   docs: {
-    theme: themes.dark,
+    theme: "defaults",
   },
 };

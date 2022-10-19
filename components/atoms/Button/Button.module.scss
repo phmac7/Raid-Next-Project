@@ -1,0 +1,9 @@
+.btn--primary {
+  color: #fff;
+  background-color: var(--color-primary-500);
+}
+.btn--error {
+  color: #333;
+  background-color: var(--color-error-500);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+}

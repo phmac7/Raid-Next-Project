@@ -2516,7 +2516,7 @@
 
 "@storybook/preset-scss@^1.0.3":
   version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@storybook/preset-scss/-/preset-scss-1.0.3.tgz#8ac834545c642dada0f64f510ef08dfb882e9737"
+  resolved "https://registry.npmjs.org/@storybook/preset-scss/-/preset-scss-1.0.3.tgz"
   integrity sha512-o9Iz6wxPeNENrQa2mKlsDKynBfqU2uWaRP80HeWp4TkGgf7/x3DVF2O7yi9N0x/PI1qzzTTpxlQ90D62XmpiTw==
 
 "@storybook/preview-web@6.5.12":
@@ -5024,7 +5024,7 @@ css-loader@^5.0.1:
 
 css-loader@^6.7.1:
   version "6.7.1"
-  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-6.7.1.tgz#e98106f154f6e1baf3fc3bc455cb9981c1d5fd2e"
+  resolved "https://registry.npmjs.org/css-loader/-/css-loader-6.7.1.tgz"
   integrity sha512-yB5CNFa14MbPJcomwNh3wLThtkZgcNyI2bNMRt8iE5Z8Vwl7f8vQXFAzn2HDOJvtDq2NTZBUGMSUNNyrv3/+cw==
   dependencies:
     icss-utils "^5.1.0"
@@ -5462,7 +5462,7 @@ enhanced-resolve@^4.5.0:
     memory-fs "^0.5.0"
     tapable "^1.0.0"
 
-enhanced-resolve@^5.10.0:
+enhanced-resolve@^5.10.0, enhanced-resolve@^5.7.0:
   version "5.10.0"
   resolved "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.10.0.tgz"
   integrity sha512-T0yTFjdpldGY8PmuXXR0PyQ1ufZpEGiHVrp7zHKB7jdR4qlmZHhONVM5AQOAWXuF/w3dnHbEQVrNptJgt7F+cQ==
@@ -8734,6 +8734,11 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.npmjs.org/nested-error-stacks/-/nested-error-stacks-2.1.1.tgz"
   integrity sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==
 
+next-themes@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npmjs.org/next-themes/-/next-themes-0.2.1.tgz"
+  integrity sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==
+
 next@12.3.1:
   version "12.3.1"
   resolved "https://registry.npmjs.org/next/-/next-12.3.1.tgz"
@@ -10344,7 +10349,7 @@ sass-loader@^10.2.0:
 
 sass-loader@^13.1.0:
   version "13.1.0"
-  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-13.1.0.tgz#e5b9acf14199a9bc6eaed7a0b8b23951c2cebf6f"
+  resolved "https://registry.npmjs.org/sass-loader/-/sass-loader-13.1.0.tgz"
   integrity sha512-tZS1RJQ2n2+QNyf3CCAo1H562WjL/5AM6Gi8YcPVVoNxQX8d19mx8E+8fRrMWsyc93ZL6Q8vZDSM0FHVTJaVnQ==
   dependencies:
     klona "^2.0.4"
@@ -10968,7 +10973,7 @@ style-loader@^2.0.0:
 
 style-loader@^3.3.1:
   version "3.3.1"
-  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-3.3.1.tgz#057dfa6b3d4d7c7064462830f9113ed417d38575"
+  resolved "https://registry.npmjs.org/style-loader/-/style-loader-3.3.1.tgz"
   integrity sha512-GPcQ+LDJbrcxHORTRes6Jy2sfvK2kS6hpSfI/fXhPt+spVzxF6LJ1dHLN9zIGmVaaP044YKaIatFaufENRiDoQ==
 
 style-to-object@0.3.0, style-to-object@^0.3.0:
@@ -11274,6 +11279,15 @@ ts-pnp@^1.1.6:
   resolved "https://registry.npmjs.org/ts-pnp/-/ts-pnp-1.2.0.tgz"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
 
+tsconfig-paths-webpack-plugin@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/tsconfig-paths-webpack-plugin/-/tsconfig-paths-webpack-plugin-4.0.0.tgz#84008fc3e3e0658fdb0262758b07b4da6265ff1a"
+  integrity sha512-fw/7265mIWukrSHd0i+wSwx64kYUSAKPfxRDksjKIYTxSAp9W9/xcZVBF4Kl0eqQd5eBpAQ/oQrc5RyM/0c1GQ==
+  dependencies:
+    chalk "^4.1.0"
+    enhanced-resolve "^5.7.0"
+    tsconfig-paths "^4.0.0"
+
 tsconfig-paths@^3.14.1:
   version "3.14.1"
   resolved "https://registry.npmjs.org/tsconfig-paths/-/tsconfig-paths-3.14.1.tgz"
@@ -11281,6 +11295,15 @@ tsconfig-paths@^3.14.1:
   dependencies:
     "@types/json5" "^0.0.29"
     json5 "^1.0.1"
+    minimist "^1.2.6"
+    strip-bom "^3.0.0"
+
+tsconfig-paths@^4.0.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-4.1.0.tgz#f8ef7d467f08ae3a695335bf1ece088c5538d2c1"
+  integrity sha512-AHx4Euop/dXFC+Vx589alFba8QItjF+8hf8LtmuiCwHyI4rHXQtOOENaM8kvYf5fR0dRChy3wzWIZ9WbB7FWow==
+  dependencies:
+    json5 "^2.2.1"
     minimist "^1.2.6"
     strip-bom "^3.0.0"
 

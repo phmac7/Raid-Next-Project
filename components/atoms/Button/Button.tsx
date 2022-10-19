@@ -1,35 +1,21 @@
 import React from "react";
-import "./Button.scss";
+import styles from "./Button.module.scss";
 
 interface ButtonProps {
-  primary?: boolean;
-  backgroundColor?: string;
-  size?: "small" | "medium" | "large";
   label: string;
-  onClick?: () => void;
+  color?: string;
 }
 
-export const Button = ({
-  primary = false,
-  size = "medium",
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
-
+const Button: React.FC<ButtonProps> = ({ label, color }) => {
   return (
     <button
-      type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
-      style={{ backgroundColor }}
-      {...props}
+      className={
+        color === "error" ? styles["btn--error"] : styles["btn--primary"]
+      }
     >
       {label}
     </button>
   );
 };
+
+export default Button;
