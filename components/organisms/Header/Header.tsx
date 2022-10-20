@@ -2,6 +2,8 @@ import LogoDefault from '@/components/atoms/Icons/Logo/LogoDefault';
 import Image from 'next/image';
 import { FC } from 'react';
 
+import { BiSearch } from 'react-icons/bi';
+
 import styles from './header.module.scss';
 
 interface HeaderProps {
@@ -15,7 +17,8 @@ const Header: FC<HeaderProps> = ({ userName, userPicturePath }) => {
       <div className={styles['header__logo']}>
         <LogoDefault width="195" height="40" />
       </div>
-      <div>
+      <div className={styles['header__searchInputContainer']}>
+        <BiSearch size={28} className={styles['header__searchInputIcon']} />
         <input
           className={styles['header__searchInput']}
           type="text"
