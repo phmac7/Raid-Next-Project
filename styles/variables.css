@@ -19,13 +19,12 @@
 
   --color-gray-900: #121214;
   --color-gray-700: #202024;
-<<<<<<< HEAD
-  --color-gray-500: #74767D;
-  --color-gray-400: #7F8189;
-  --color-gray-200: #F0FFF1;
+  --color-gray-500: #74767d;
+  --color-gray-400: #7f8189;
+  --color-gray-200: #f0fff1;
 
   /* BREAKPOINTS */
-  
+
   --xs-breakpoint: 0;
   --sm-breakpoint: 576px;
   --md-breakpoint: 768px;
@@ -36,12 +35,6 @@
   /* GRID */
   --column-count: 12;
   --gutter-size: 1.6rem;
-
-=======
-  --color-gray-500: #74767d;
-  --color-gray-400: #7f8189;
-  --color-gray-200: #f0fff1;
->>>>>>> feature/navbar-sidebar
 }
 
 [data-theme='light'] {
