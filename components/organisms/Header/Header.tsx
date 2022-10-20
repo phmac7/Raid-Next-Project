@@ -21,6 +21,7 @@ const Header: FC<HeaderProps> = ({ userName, userPicturePath }) => {
           type="text"
           name="searchInput"
           id="searchInput"
+          placeholder="Search for something..."
         />
       </div>
       <div className={styles['header__userInfo']}>
