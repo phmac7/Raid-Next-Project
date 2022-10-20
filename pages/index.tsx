@@ -1,4 +1,4 @@
-import { Header } from '@/components/organisms';
+import { Header, Sidebar } from '@/components/organisms';
 import type { NextPage } from 'next';
 
 const mockUser = {
@@ -11,8 +11,8 @@ const Home: NextPage = () => {
   return (
     <>
       <Header userName={mockUser.name} userPicturePath={mockUser.picture} />
+      <Sidebar />;
     </>
   );
 };
-
 export default Home;
