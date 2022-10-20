@@ -8,14 +8,27 @@
   align-items: center;
   background-color: var(--color-gray-900);
 
-  &__searchInput {
+  &__searchInputContainer {
     width: 500px;
-    height: 60px;
-    border: none;
     border-radius: 5px;
     background-color: var(--color-gray-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__searchInputIcon {
     color: var(--color-gray-500);
-    padding-left: 54px;
+    margin: 14px 16px;
+  }
+
+  &__searchInput {
+    border-radius: 5px;
+    width: 100%;
+    background-color: var(--color-gray-700);
+    height: 60px;
+    border: none;
+    color: var(--color-gray-500);
     font-size: 18px;
   }
 
