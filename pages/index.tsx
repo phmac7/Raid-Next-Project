@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Header userName={mockUser.name} userPicturePath={mockUser.picture} />
-      <Sidebar />;
+      <Sidebar />
     </>
   );
 };
