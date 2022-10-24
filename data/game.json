@@ -2,11 +2,11 @@
   {
     "id": 1,
     "name": "League of Legends",
-    "game_icon": ""
+    "icon": ""
   },
   {
     "id": 2,
     "name": "Valorant",
-    "game_icon": ""
+    "icon": ""
   }
 ]

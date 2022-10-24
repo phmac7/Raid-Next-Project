@@ -2,46 +2,55 @@
   {
     "id": 1,
     "name": "Top Lane",
-    "role_icon": ""
+    "icon": "",
+    "game": 1
   },
   {
     "id": 2,
     "name": "Mid Lane",
-    "role_icon": ""
+    "icon": "",
+    "game": 1
   },
   {
     "id": 3,
     "name": "Adc",
-    "role_icon": ""
+    "icon": "",
+    "game": 1
   },
   {
     "id": 4,
     "name": "Support",
-    "role_icon": ""
+    "icon": "",
+    "game": 1
   },
   {
     "id": 5,
     "name": "Jungle",
-    "role_icon": ""
+    "icon": "",
+    "game": 1
   },
   {
     "id": 6,
     "name": "Controller",
-    "role_icon": ""
+    "icon": "",
+    "game": 2
   },
   {
     "id": 7,
     "name": "Duelist",
-    "role_icon": ""
+    "icon": "",
+    "game": 2
   },
   {
     "id": 8,
     "name": "Initiator",
-    "role_icon": ""
+    "icon": "",
+    "game": 2
   },
   {
     "id": 9,
     "name": "Sentinel",
-    "role_icon": ""
+    "icon": "",
+    "game": 2
   }
 ]

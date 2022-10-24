@@ -2,87 +2,104 @@
   {
     "id": 1,
     "name": "Iron",
-    "elo_icon": ""
+    "icon": "",
+    "game": 1
   },
   {
     "id": 2,
     "name": "Bronze",
-    "elo_icon": ""
+    "icon": "",
+    "game": 1
   },
   {
     "id": 3,
     "name": "Silver",
-    "elo_icon": ""
+    "icon": "",
+    "game": 1
   },
   {
     "id": 4,
     "name": "Gold",
-    "elo_icon": ""
+    "icon": "",
+    "game": 1
   },
   {
     "id": 5,
     "name": "Platinum",
-    "elo_icon": ""
+    "icon": "",
+    "game": 1
   },
   {
     "id": 6,
     "name": "Diamond",
-    "elo_icon": ""
+    "icon": "",
+    "game": 1
   },
   {
     "id": 7,
     "name": "Master",
-    "elo_icon": ""
+    "icon": "",
+    "game": 1
   },
   {
     "id": 8,
     "name": "Grandmaster",
-    "elo_icon": ""
+    "icon": "",
+    "game": 1
   },
   {
     "id": 9,
     "name": "Challenger",
-    "elo_icon": ""
+    "icon": "",
+    "game": 1
   },
 
   {
     "id": 10,
     "name": "Iron",
-    "elo_icon": ""
+    "icon": "",
+    "game": 2
   },
   {
     "id": 11,
     "name": "Bronze",
-    "elo_icon": ""
+    "icon": "",
+    "game": 2
   },
   {
     "id": 12,
     "name": "Silver",
-    "elo_icon": ""
+    "icon": "",
+    "game": 2
   },
   {
     "id": 13,
     "name": "Gold",
-    "elo_icon": ""
+    "icon": "",
+    "game": 2
   },
   {
     "id": 14,
     "name": "Platinum",
-    "elo_icon": ""
+    "icon": "",
+    "game": 2
   },
   {
     "id": 15,
     "name": "Diamond",
-    "elo_icon": ""
+    "icon": "",
+    "game": 2
   },
   {
     "id": 16,
     "name": "Immortal",
-    "elo_icon": ""
+    "icon": "",
+    "game": 2
   },
   {
     "id": 17,
     "name": "Valorant",
-    "elo_icon": ""
+    "icon": "",
+    "game": 2
   }
 ]
