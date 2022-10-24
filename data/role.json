@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Top Lane",
+    "role_icon": ""
+  },
+  {
+    "id": 2,
+    "name": "Mid Lane",
+    "role_icon": ""
+  },
+  {
+    "id": 3,
+    "name": "Adc",
+    "role_icon": ""
+  },
+  {
+    "id": 4,
+    "name": "Support",
+    "role_icon": ""
+  },
+  {
+    "id": 5,
+    "name": "Jungle",
+    "role_icon": ""
+  },
+  {
+    "id": 6,
+    "name": "Controller",
+    "role_icon": ""
+  },
+  {
+    "id": 7,
+    "name": "Duelist",
+    "role_icon": ""
+  },
+  {
+    "id": 8,
+    "name": "Initiator",
+    "role_icon": ""
+  },
+  {
+    "id": 9,
+    "name": "Sentinel",
+    "role_icon": ""
+  }
+]

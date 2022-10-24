@@ -1,0 +1,88 @@
+[
+  {
+    "id": 1,
+    "name": "Iron",
+    "elo_icon": ""
+  },
+  {
+    "id": 2,
+    "name": "Bronze",
+    "elo_icon": ""
+  },
+  {
+    "id": 3,
+    "name": "Silver",
+    "elo_icon": ""
+  },
+  {
+    "id": 4,
+    "name": "Gold",
+    "elo_icon": ""
+  },
+  {
+    "id": 5,
+    "name": "Platinum",
+    "elo_icon": ""
+  },
+  {
+    "id": 6,
+    "name": "Diamond",
+    "elo_icon": ""
+  },
+  {
+    "id": 7,
+    "name": "Master",
+    "elo_icon": ""
+  },
+  {
+    "id": 8,
+    "name": "Grandmaster",
+    "elo_icon": ""
+  },
+  {
+    "id": 9,
+    "name": "Challenger",
+    "elo_icon": ""
+  },
+
+  {
+    "id": 10,
+    "name": "Iron",
+    "elo_icon": ""
+  },
+  {
+    "id": 11,
+    "name": "Bronze",
+    "elo_icon": ""
+  },
+  {
+    "id": 12,
+    "name": "Silver",
+    "elo_icon": ""
+  },
+  {
+    "id": 13,
+    "name": "Gold",
+    "elo_icon": ""
+  },
+  {
+    "id": 14,
+    "name": "Platinum",
+    "elo_icon": ""
+  },
+  {
+    "id": 15,
+    "name": "Diamond",
+    "elo_icon": ""
+  },
+  {
+    "id": 16,
+    "name": "Immortal",
+    "elo_icon": ""
+  },
+  {
+    "id": 17,
+    "name": "Valorant",
+    "elo_icon": ""
+  }
+]
