@@ -13,7 +13,7 @@ const mockUser = {
 const Home: NextPage = () => {
   useEffect(() => {
     const fetchFunction = async () => {
-      const response = await fetch('/api/users/lucas');
+      const response = await fetch('/api/roles');
       const data = await response.json();
       console.log(data);
     };
