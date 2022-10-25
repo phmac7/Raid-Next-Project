@@ -1,103 +1,338 @@
 [
   {
     "id": 1,
-    "name": "Iron",
+    "name": "No Rank",
     "icon": "",
     "game": 1
   },
   {
     "id": 2,
-    "name": "Bronze",
+    "name": "Iron IV",
     "icon": "",
     "game": 1
   },
   {
     "id": 3,
-    "name": "Silver",
+    "name": "Iron III",
     "icon": "",
     "game": 1
   },
   {
     "id": 4,
-    "name": "Gold",
+    "name": "Iron II",
     "icon": "",
     "game": 1
   },
   {
     "id": 5,
-    "name": "Platinum",
+    "name": "Iron I",
     "icon": "",
     "game": 1
   },
+
   {
     "id": 6,
-    "name": "Diamond",
+    "name": "Bronze IV",
     "icon": "",
     "game": 1
   },
   {
     "id": 7,
-    "name": "Master",
+    "name": "Bronze III",
     "icon": "",
     "game": 1
   },
   {
     "id": 8,
-    "name": "Grandmaster",
+    "name": "Bronze II",
     "icon": "",
     "game": 1
   },
   {
     "id": 9,
-    "name": "Challenger",
+    "name": "Bronze I",
     "icon": "",
     "game": 1
   },
 
   {
     "id": 10,
-    "name": "Iron",
+    "name": "Silver IV",
     "icon": "",
-    "game": 2
+    "game": 1
   },
   {
     "id": 11,
-    "name": "Bronze",
+    "name": "Silver III",
     "icon": "",
-    "game": 2
+    "game": 1
   },
   {
     "id": 12,
-    "name": "Silver",
+    "name": "Silver II",
     "icon": "",
-    "game": 2
+    "game": 1
   },
   {
     "id": 13,
-    "name": "Gold",
+    "name": "Silver I",
     "icon": "",
-    "game": 2
+    "game": 1
   },
+
   {
     "id": 14,
-    "name": "Platinum",
+    "name": "Gold IV",
     "icon": "",
-    "game": 2
+    "game": 1
   },
   {
     "id": 15,
-    "name": "Diamond",
+    "name": "Gold III",
     "icon": "",
-    "game": 2
+    "game": 1
   },
   {
     "id": 16,
-    "name": "Immortal",
+    "name": "Gold II",
+    "icon": "",
+    "game": 1
+  },
+  {
+    "id": 17,
+    "name": "Gold I",
+    "icon": "",
+    "game": 1
+  },
+
+  {
+    "id": 18,
+    "name": "Platinum IV",
+    "icon": "",
+    "game": 1
+  },
+  {
+    "id": 19,
+    "name": "Platinum III",
+    "icon": "",
+    "game": 1
+  },
+  {
+    "id": 20,
+    "name": "Platinum II",
+    "icon": "",
+    "game": 1
+  },
+  {
+    "id": 21,
+    "name": "Platinum I",
+    "icon": "",
+    "game": 1
+  },
+
+  {
+    "id": 22,
+    "name": "Diamond IV",
+    "icon": "",
+    "game": 1
+  },
+  {
+    "id": 23,
+    "name": "Diamond III",
+    "icon": "",
+    "game": 1
+  },
+  {
+    "id": 24,
+    "name": "Diamond II",
+    "icon": "",
+    "game": 1
+  },
+  {
+    "id": 25,
+    "name": "Diamond I",
+    "icon": "",
+    "game": 1
+  },
+  {
+    "id": 26,
+    "name": "Master",
+    "icon": "",
+    "game": 1
+  },
+  {
+    "id": 27,
+    "name": "Grandmaster",
+    "icon": "",
+    "game": 1
+  },
+  {
+    "id": 28,
+    "name": "Challenger",
+    "icon": "",
+    "game": 1
+  },
+
+  {
+    "id": 29,
+    "name": "No Rank",
+    "icon": "",
+    "game": 2
+  },
+
+  {
+    "id": 30,
+    "name": "Iron I",
     "icon": "",
     "game": 2
   },
   {
-    "id": 17,
+    "id": 31,
+    "name": "Iron II",
+    "icon": "",
+    "game": 2
+  },
+  {
+    "id": 32,
+    "name": "Iron III",
+    "icon": "",
+    "game": 2
+  },
+
+  {
+    "id": 33,
+    "name": "Bronze I",
+    "icon": "",
+    "game": 2
+  },
+  {
+    "id": 34,
+    "name": "Bronze II",
+    "icon": "",
+    "game": 2
+  },
+  {
+    "id": 35,
+    "name": "Bronze III",
+    "icon": "",
+    "game": 2
+  },
+
+  {
+    "id": 36,
+    "name": "Silver I",
+    "icon": "",
+    "game": 2
+  },
+  {
+    "id": 37,
+    "name": "Silver II",
+    "icon": "",
+    "game": 2
+  },
+  {
+    "id": 38,
+    "name": "Silver III",
+    "icon": "",
+    "game": 2
+  },
+
+  {
+    "id": 39,
+    "name": "Gold I",
+    "icon": "",
+    "game": 2
+  },
+  {
+    "id": 40,
+    "name": "Gold II",
+    "icon": "",
+    "game": 2
+  },
+  {
+    "id": 41,
+    "name": "Gold III",
+    "icon": "",
+    "game": 2
+  },
+
+  {
+    "id": 42,
+    "name": "Platinum I",
+    "icon": "",
+    "game": 2
+  },
+  {
+    "id": 43,
+    "name": "Platinum II",
+    "icon": "",
+    "game": 2
+  },
+  {
+    "id": 44,
+    "name": "Platinum III",
+    "icon": "",
+    "game": 2
+  },
+
+  {
+    "id": 45,
+    "name": "Diamond I",
+    "icon": "",
+    "game": 2
+  },
+  {
+    "id": 46,
+    "name": "Diamond II",
+    "icon": "",
+    "game": 2
+  },
+  {
+    "id": 47,
+    "name": "Diamond III",
+    "icon": "",
+    "game": 2
+  },
+
+  {
+    "id": 48,
+    "name": "Ascendant I",
+    "icon": "",
+    "game": 2
+  },
+  {
+    "id": 49,
+    "name": "Ascendant II",
+    "icon": "",
+    "game": 2
+  },
+  {
+    "id": 50,
+    "name": "Ascendant III",
+    "icon": "",
+    "game": 2
+  },
+
+  {
+    "id": 51,
+    "name": "Immortal I",
+    "icon": "",
+    "game": 2
+  },
+  {
+    "id": 52,
+    "name": "Immortal II",
+    "icon": "",
+    "game": 2
+  },
+  {
+    "id": 53,
+    "name": "Immortal III",
+    "icon": "",
+    "game": 2
+  },
+  {
+    "id": 54,
     "name": "Valorant",
     "icon": "",
     "game": 2
