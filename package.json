@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@storybook/preset-scss": "^1.0.3",
+    "contentful": "^9.2.5",
     "next": "12.3.1",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
