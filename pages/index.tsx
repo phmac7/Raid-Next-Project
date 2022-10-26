@@ -1,8 +1,5 @@
-import { useEffect } from 'react';
-
 import { Header, Sidebar } from '@/components/organisms';
 import type { NextPage } from 'next';
-import { Console } from 'console';
 
 const mockUser = {
   name: 'Mussum Cacildis',
@@ -11,16 +8,6 @@ const mockUser = {
 };
 
 const Home: NextPage = () => {
-  useEffect(() => {
-    const fetchFunction = async () => {
-      const response = await fetch('/api/roles');
-      const data = await response.json();
-      console.log(data);
-    };
-
-    fetchFunction();
-  }, []);
-
   return (
     <>
       <Header userName={mockUser.name} userPicturePath={mockUser.picture} />
