@@ -1,4 +1,4 @@
-import { createClient, ContentfulClientApi } from 'contentful';
+import { createClient } from 'contentful';
 
 const SPACE_ID = 'mpk7fhk3qfhm';
 const ACESS_TOKEN = 'lj4RJ475ZCecOH0dYN9fab7pmOsiltDThXFEN2ZwzZs';
