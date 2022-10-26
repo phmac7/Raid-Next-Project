@@ -1,0 +1,20 @@
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  &__image {
+  }
+  &__data {
+    display: flex;
+    flex-direction: column;
+  }
+  &__name {
+    margin-bottom: 4px;
+    font-size: 18px;
+  }
+  &__postDate {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--color-gray-400);
+  }
+}
