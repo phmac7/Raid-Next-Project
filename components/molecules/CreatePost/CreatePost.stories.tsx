@@ -17,6 +17,18 @@ export default {
       label: 'Create Post',
     },
   },
+  argTypes: {
+    avatarInput: {
+      table: {
+        disable: true,
+      },
+    },
+    button: {
+      table: {
+        disable: true,
+      },
+    },
+  },
 } as Meta<CreatePostType>;
 
 export const Default: StoryObj<CreatePostType> = {};
