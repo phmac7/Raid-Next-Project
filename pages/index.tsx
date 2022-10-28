@@ -1,5 +1,6 @@
 import { Header, Sidebar } from '@/components/organisms';
 import type { NextPage } from 'next';
+import { useEffect } from 'react';
 
 const mockUser = {
   name: 'Mussum Cacildis',
@@ -8,6 +9,16 @@ const mockUser = {
 };
 
 const Home: NextPage = () => {
+  useEffect(() => {
+    const fetchExample = async () => {
+      const response = await fetch('/api/elos');
+      const data = await response.json();
+      console.log(data);
+    };
+
+    fetchExample();
+  }, []);
+
   return (
     <>
       <Header userName={mockUser.name} userPicturePath={mockUser.picture} />

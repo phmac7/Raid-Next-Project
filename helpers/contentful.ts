@@ -1,7 +1,9 @@
-import { createClient } from 'contentful';
+//import { createClient } from 'contentful';
+import { createClient } from 'contentful-management';
 
 const SPACE_ID = 'mpk7fhk3qfhm';
-const ACESS_TOKEN = 'lj4RJ475ZCecOH0dYN9fab7pmOsiltDThXFEN2ZwzZs';
+const ENVIRONMENT_ID = 'MASTER';
+const ACESS_TOKEN = 'CFPAT-9Hg5ETk_m-UOeL6SnmwX0-mEl0J2sxdf-fA-dz9ct9U';
 
 export const contentfulTypeIds = {
   user: 'user',
@@ -12,12 +14,40 @@ export const contentfulTypeIds = {
 };
 
 export function createContentfulClient() {
-  const client = createClient({
-    space: SPACE_ID,
-    accessToken: ACESS_TOKEN,
-  });
+  const client = createClient(
+    {
+      accessToken: ACESS_TOKEN,
+    },
+    {
+      type: 'plain',
+      defaults: {
+        spaceId: SPACE_ID,
+        environmentId: ENVIRONMENT_ID,
+      },
+    }
+  );
 
   return client;
+}
+
+export async function getAllEntriesFromOneContent(contentTypeId: string) {
+  const client = createContentfulClient();
+  const response = await client.entry.getMany({
+    query: {
+      content_type: contentTypeId,
+      query: {
+        skip: 10,
+        limit: 100,
+      },
+    },
+  });
+  return response.items;
+}
+
+/*export async function getAllEntriesFromOneContent(contentTypeId: string) {
+  const client = createContentfulClient();
+  const response = await client.getEntries({ content_type: contentTypeId });
+  return response.items;
 }
 
 export async function getAllEntriesFromOneContent(contentTypeId: string) {
@@ -45,3 +75,4 @@ export async function getEntrysByFieldValue(
   });
   return response.items;
 }
+*/
