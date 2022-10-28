@@ -6,12 +6,14 @@ export interface AvatarInputProps {
   id: string;
   placeholder: string;
   avatar: string;
+  label: string;
 }
 
 const AvatarInput: React.FC<AvatarInputProps> = ({
   id,
   placeholder,
   avatar,
+  label,
 }) => {
   return (
     <div className={styles.avatarInput}>
@@ -22,7 +24,9 @@ const AvatarInput: React.FC<AvatarInputProps> = ({
         height={50}
         width={50}
       />
-      <label className={styles['avatarInput__label']} htmlFor={id}></label>
+      <label className={styles['avatarInput__label']} htmlFor={id}>
+        {label}
+      </label>
       <input
         className={styles['avatarInput__field']}
         id={id}

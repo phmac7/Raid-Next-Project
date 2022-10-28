@@ -6,7 +6,7 @@ interface ButtonProps {
   color?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ label, color }) => {
+const Button: React.FC<ButtonProps> = ({ label }) => {
   return <button className={styles.button}>{label}</button>;
 };
 
