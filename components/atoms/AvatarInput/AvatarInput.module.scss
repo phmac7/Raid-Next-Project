@@ -1,6 +1,7 @@
 .avatarInput {
   display: flex;
   align-items: center;
+  position: relative;
 
   &__avatar {
     width: 0.4rem;
@@ -10,6 +11,8 @@
 
   &__label {
     color: #fff;
+    position: absolute;
+    visibility: hidden;
   }
 
   &__field {
