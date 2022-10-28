@@ -44,6 +44,14 @@ export async function getAllEntriesFromOneContent(contentTypeId: string) {
   return response.items;
 }
 
+export async function getEntryById(id: string) {
+  const client = createContentfulClient();
+  const response = await client.entry.get({
+    entryId: id,
+  });
+  return response;
+}
+
 /*export async function getAllEntriesFromOneContent(contentTypeId: string) {
   const client = createContentfulClient();
   const response = await client.getEntries({ content_type: contentTypeId });

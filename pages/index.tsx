@@ -11,7 +11,7 @@ const mockUser = {
 const Home: NextPage = () => {
   useEffect(() => {
     const fetchExample = async () => {
-      const response = await fetch('/api/elos');
+      const response = await fetch('/api/users/3ylBXptrDQxOV3M0hRuDlc');
       const data = await response.json();
       console.log(data);
     };
