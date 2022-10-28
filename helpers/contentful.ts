@@ -35,10 +35,6 @@ export async function getAllEntriesFromOneContent(contentTypeId: string) {
   const response = await client.entry.getMany({
     query: {
       content_type: contentTypeId,
-      query: {
-        skip: 10,
-        limit: 100,
-      },
     },
   });
   return response.items;
@@ -50,6 +46,23 @@ export async function getEntryById(id: string) {
     entryId: id,
   });
   return response;
+}
+
+export async function getEntrysByFieldValue(
+  contentTypeId: string,
+  field: string,
+  value: string
+) {
+  const client = createContentfulClient();
+  const fieldIdentificator = `fields.${field}`;
+  const response = await client.entry.getMany({
+    query: {
+      content_type: contentTypeId,
+      [fieldIdentificator]: value,
+    },
+  });
+
+  return response.items;
 }
 
 /*export async function getAllEntriesFromOneContent(contentTypeId: string) {
