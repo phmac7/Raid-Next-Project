@@ -9,6 +9,7 @@ export const contentfulTypeIds = {
   game: 'game',
   elo: 'elo',
   userPlayGames: 'userPlayGames',
+  post: 'post',
 };
 
 export function createContentfulClient() {
