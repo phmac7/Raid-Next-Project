@@ -1,0 +1,65 @@
+.postCard {
+  width: 600px;
+  height: fit-content;
+
+  max-width: 600px;
+  background-color: var(--color-gray-900);
+
+  padding: 15px;
+
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__userData {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__userImage {
+    border-radius: 50%;
+  }
+  &__userInfo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__playingGame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--color-gray-200);
+    &--big {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    &--dark {
+      color: var(--color-gray-400);
+      font-size: 12px;
+    }
+  }
+
+  &__content {
+  }
+
+  &__postImage {
+    margin-bottom: 15px;
+  }
+  &__footer {
+  }
+}
