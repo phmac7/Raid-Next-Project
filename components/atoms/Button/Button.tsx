@@ -1,12 +1,8 @@
 import React from 'react';
 import styles from './Button.module.scss';
+import { ButtonType } from '@/models/components';
 
-interface ButtonProps {
-  label: string;
-  color?: string;
-}
-
-const Button: React.FC<ButtonProps> = ({ label }) => {
+const Button: React.FC<ButtonType> = ({ label }) => {
   return <button className={styles.button}>{label}</button>;
 };
 

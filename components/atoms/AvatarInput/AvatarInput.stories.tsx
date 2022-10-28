@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
-import AvatarInput, { AvatarInputProps } from './AvatarInput';
+import AvatarInput from './AvatarInput';
 import styles from './AvatarInput.module.scss';
+import { AvatarInputType } from '@/models/components';
 
 export default {
   title: 'Component/AvatarInput',
@@ -25,6 +26,6 @@ export default {
       </div>
     ),
   ],
-} as Meta<AvatarInputProps>;
+} as Meta<AvatarInputType>;
 
-export const Default: StoryObj<AvatarInputProps> = {};
+export const Default: StoryObj<AvatarInputType> = {};

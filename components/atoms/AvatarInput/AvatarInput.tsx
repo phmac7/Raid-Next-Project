@@ -2,14 +2,9 @@ import Image from 'next/image';
 import React from 'react';
 import styles from './AvatarInput.module.scss';
 
-export interface AvatarInputProps {
-  id: string;
-  placeholder: string;
-  avatar: string;
-  label: string;
-}
+import { AvatarInputType } from '@/models/components';
 
-const AvatarInput: React.FC<AvatarInputProps> = ({
+const AvatarInput: React.FC<AvatarInputType> = ({
   id,
   placeholder,
   avatar,
