@@ -9,9 +9,10 @@ const AvatarInput: React.FC<AvatarInputType> = ({
   placeholder,
   avatar,
   label,
+  cssModule,
 }) => {
   return (
-    <div className={styles.avatarInput}>
+    <div className={`${styles.avatarInput} ${cssModule && styles[cssModule]}`}>
       <Image
         className={styles['avatarInput__avatar']}
         src={avatar}

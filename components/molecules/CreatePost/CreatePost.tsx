@@ -7,8 +7,8 @@ import { CreatePostType } from '@/models/components';
 const CreatePost: React.FC<CreatePostType> = ({ avatarInput, button }) => {
   return (
     <section className={styles.createPost}>
-      <AvatarInput {...avatarInput} />
-      <Button {...button} />
+      <AvatarInput {...avatarInput} cssModule="avatarInput--createPost" />
+      <Button {...button} cssModule="button--createPost" />
     </section>
   );
 };

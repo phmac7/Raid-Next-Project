@@ -8,9 +8,13 @@
   color: var(--color-gray-200);
   transition: all 0.3s;
   cursor: pointer;
-}
 
-.button:hover {
-  background-color: var(--color-gray-200);
-  color: var(--color-primary-500);
+  &:hover {
+    background-color: var(--color-gray-200);
+    color: var(--color-primary-500);
+  }
+
+  &--createPost {
+    align-self: flex-end;
+  }
 }
