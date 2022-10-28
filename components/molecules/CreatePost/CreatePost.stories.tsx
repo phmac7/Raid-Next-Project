@@ -13,6 +13,9 @@ export default {
       id: 'createPost',
       label: 'Create Post',
     },
+    button: {
+      label: 'Create Post',
+    },
   },
 } as Meta<CreatePostType>;
 
