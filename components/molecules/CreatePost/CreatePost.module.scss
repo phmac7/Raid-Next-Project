@@ -1,0 +1,18 @@
+.createPost {
+  background-color: var(--color-gray-900);
+  padding: 1.6rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 60rem;
+
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    margin-bottom: 2.2rem;
+  }
+
+  &__button {
+    align-self: flex-end;
+  }
+}
