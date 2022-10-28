@@ -1,10 +1,30 @@
 .avatarInput {
+  display: flex;
+  align-items: center;
+
   &__avatar {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 9999px;
   }
 
   &__label {
   }
 
   &__field {
+    padding: 1.2rem 0.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--color-gray-700);
+    width: 100%;
+    color: var(--color-gray-200);
+    margin-left: 2rem;
+  }
+
+  &__decorator {
+    padding: 1.6rem;
+    background-color: var(--color-gray-900);
+    max-width: 60rem;
+    border-radius: 0.5rem;
   }
 }
