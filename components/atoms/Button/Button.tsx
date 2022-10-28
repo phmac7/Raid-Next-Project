@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./Button.module.scss";
+import React from 'react';
+import styles from './Button.module.scss';
 
 interface ButtonProps {
   label: string;
@@ -7,15 +7,7 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ label, color }) => {
-  return (
-    <button
-      className={
-        color === "error" ? styles["btn--error"] : styles["btn--primary"]
-      }
-    >
-      {label}
-    </button>
-  );
+  return <button className={styles.button}>{label}</button>;
 };
 
 export default Button;
