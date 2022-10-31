@@ -1,11 +1,11 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { UserGames } from '@/components/molecules';
+import { UserGameCard } from '@/components/molecules';
 export default {
-    title: 'Component/UserGames',
-    component: UserGames,
-} as ComponentMeta<typeof UserGames>;
+    title: 'Component/UserGameCard',
+    component: UserGameCard,
+} as ComponentMeta<typeof UserGameCard>;
 
-const Template: ComponentStory<typeof UserGames> = (args) => <UserGames {...args} />;
+const Template: ComponentStory<typeof UserGameCard> = (args) => <UserGameCard {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
