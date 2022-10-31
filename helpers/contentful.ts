@@ -64,36 +64,3 @@ export async function getEntrysByFieldValue(
 
   return response.items;
 }
-
-/*export async function getAllEntriesFromOneContent(contentTypeId: string) {
-  const client = createContentfulClient();
-  const response = await client.getEntries({ content_type: contentTypeId });
-  return response.items;
-}
-
-export async function getAllEntriesFromOneContent(contentTypeId: string) {
-  const client = createContentfulClient();
-  const response = await client.getEntries({ content_type: contentTypeId });
-  return response.items;
-}
-
-export async function getEntryById(id: string) {
-  const client = createContentfulClient();
-  const response = await client.getEntry(id);
-  return response;
-}
-
-export async function getEntrysByFieldValue(
-  contentTypeId: string,
-  field: string,
-  value: string
-) {
-  const client = createContentfulClient();
-  const fieldIdentificator = `fields.${field}`;
-  const response = await client.getEntries({
-    content_type: contentTypeId,
-    [fieldIdentificator]: value,
-  });
-  return response.items;
-}
-*/
