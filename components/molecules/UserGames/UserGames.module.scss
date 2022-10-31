@@ -1,0 +1,22 @@
+.userGames {
+    background-color: var(--color-gray-900);
+    color: var(--color-gray-200);
+    padding: 1.6rem 1.4rem;
+    border-radius: 5px;
+    max-width: 30.2rem;
+    &__heading{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__title{
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+        &__link{
+            text-decoration: none;
+            color: var(--color-primary-500);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+    }
+}
