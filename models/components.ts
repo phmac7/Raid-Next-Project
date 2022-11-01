@@ -19,6 +19,12 @@ export interface CreatePostType {
 
 // Post Create Modal Types
 
+export interface ModalType {
+  header: React.FC;
+  main: React.FC;
+  footer: React.FC;
+}
+
 export interface TextAreaType {
   id: string;
   rows?: number;
