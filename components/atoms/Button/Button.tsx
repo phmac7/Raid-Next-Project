@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Button.module.scss';
+import styles from './button.module.scss';
 import { ButtonType } from '@/models/components';
 
 const Button: React.FC<ButtonType> = ({ label, cssModule, onClick }) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Modal.module.scss';
+import styles from './modal.module.scss';
 import { ModalType } from '@/models/components';
 import { X } from 'phosphor-react';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './CreatePost.module.scss';
+import styles from './createPost.module.scss';
 import { Button, Avatar } from '@/components/atoms';
 
 import { CreatePostType } from '@/models/components';

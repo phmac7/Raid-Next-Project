@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Dropdown.module.scss';
+import styles from './dropdown.module.scss';
 import { DropdownType } from '@/models/components';
 
 const Dropdown: React.FC<DropdownType> = ({ id, name, options }) => {

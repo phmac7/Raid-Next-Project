@@ -1,6 +1,6 @@
 import React, { ReactNode, FC } from 'react';
 import { Header, Sidebar } from '@/components/organisms';
-import styles from './Layout.module.scss';
+import styles from './layout.module.scss';
 
 interface LayoutType {
   children: ReactNode;

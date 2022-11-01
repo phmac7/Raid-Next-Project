@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import styles from './Avatar.module.scss';
+import styles from './avatar.module.scss';
 
 import { AvatarType } from '@/models/components';
 

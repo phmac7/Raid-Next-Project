@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './TextArea.module.scss';
+import styles from './textArea.module.scss';
 import { TextAreaType } from '@/models/components';
 
 const TextArea: React.FC<TextAreaType> = ({ id, rows, cols, placeholder }) => {
