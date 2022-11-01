@@ -37,21 +37,18 @@ export async function getEntryById(entryId: string) {
   const response = await environment.getEntry(entryId);
   return response;
 }
-/*
+
 export async function getEntrysByFieldValue(
   contentTypeId: string,
   field: string,
   value: string
 ) {
-  const client = createContentfulClient();
+  const environment = await createContentfulClient();
   const fieldIdentificator = `fields.${field}`;
-  const response = await client.entry.getMany({
-    query: {
-      content_type: contentTypeId,
-      [fieldIdentificator]: value,
-    },
+  const response = await environment.getPublishedEntries({
+    content_type: contentTypeId,
+    [fieldIdentificator]: value,
   });
 
   return response.items;
 }
-*/
