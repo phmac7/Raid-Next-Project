@@ -6,10 +6,10 @@ import { CreatePostType } from '@/models/components';
 
 const CreatePost: React.FC<CreatePostType> = ({ avatarInput, button }) => {
   return (
-    <form className={styles.createPost}>
+    <section className={styles.createPost}>
       <AvatarInput {...avatarInput} cssModule="avatarInput--createPost" />
       <Button {...button} cssModule="button--createPost" />
-    </form>
+    </section>
   );
 };
 

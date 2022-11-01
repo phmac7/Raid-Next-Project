@@ -1,3 +1,5 @@
+import { ButtonHTMLAttributes } from 'react';
+
 export interface AvatarInputType {
   id: string;
   placeholder: string;
@@ -6,7 +8,7 @@ export interface AvatarInputType {
   cssModule?: string;
 }
 
-export interface ButtonType {
+export interface ButtonType extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
   color?: string;
   cssModule?: string;
@@ -20,9 +22,10 @@ export interface CreatePostType {
 // Post Create Modal Types
 
 export interface ModalType {
-  header: React.FC;
-  main: React.FC;
-  footer: React.FC;
+  header: JSX.Element;
+  main: JSX.Element;
+  footer: JSX.Element;
+  ref: React.ForwardedRef<HTMLDialogElement>;
 }
 
 export interface TextAreaType {

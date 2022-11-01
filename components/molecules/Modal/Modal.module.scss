@@ -1,0 +1,26 @@
+.modal {
+  padding: 1.8rem 2rem;
+  margin: auto;
+  min-width: 60rem;
+  background-color: var(--color-gray-700);
+  border: none;
+  border-radius: 0.5rem;
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  &__header,
+  &__main {
+    margin-bottom: 2.2rem;
+  }
+
+  &__header,
+  &__main,
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+}
