@@ -27,7 +27,7 @@ export interface TextAreaType {
   label: string;
 }
 
-export interface Drop {
+export interface DropdownType {
   id: string;
   name: string;
   options: { value: string; text: string }[];
