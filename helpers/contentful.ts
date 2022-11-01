@@ -3,7 +3,7 @@ import { createClient } from 'contentful-management';
 
 const SPACE_ID = 'mpk7fhk3qfhm';
 const ENVIRONMENT_ID = 'MASTER';
-const ACESS_TOKEN = 'CFPAT-9Hg5ETk_m-UOeL6SnmwX0-mEl0J2sxdf-fA-dz9ct9U';
+const ACCESS_TOKEN = 'CFPAT-9Hg5ETk_m-UOeL6SnmwX0-mEl0J2sxdf-fA-dz9ct9U';
 
 export const contentfulTypeIds = {
   user: 'user',
@@ -13,34 +13,26 @@ export const contentfulTypeIds = {
   userPlayGames: 'userPlayGames',
 };
 
-export function createContentfulClient() {
-  const client = createClient(
-    {
-      accessToken: ACESS_TOKEN,
-    },
-    {
-      type: 'plain',
-      defaults: {
-        spaceId: SPACE_ID,
-        environmentId: ENVIRONMENT_ID,
-      },
-    }
-  );
+export async function createContentfulClient() {
+  const client = createClient({
+    accessToken: ACCESS_TOKEN,
+  });
+  const space = await client.getSpace(SPACE_ID);
+  const environment = await space.getEnvironment(ENVIRONMENT_ID);
 
-  return client;
+  return environment;
 }
 
 export async function getAllEntriesFromOneContent(contentTypeId: string) {
-  const client = createContentfulClient();
-  const response = await client.entry.getMany({
-    query: {
-      content_type: contentTypeId,
-    },
+  const environment = await createContentfulClient();
+  const response = await environment.getPublishedEntries({
+    content_type: contentTypeId,
   });
+
   return response.items;
 }
 
-export async function getEntryById(id: string) {
+/*export async function getEntryById(id: string) {
   const client = createContentfulClient();
   const response = await client.entry.get({
     entryId: id,
@@ -64,3 +56,4 @@ export async function getEntrysByFieldValue(
 
   return response.items;
 }
+*/
