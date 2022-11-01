@@ -1,15 +1,8 @@
 import React from 'react';
 import styles from './TextArea.module.scss';
 import { TextAreaType } from '@/models/components';
-import { placeholder } from '@babel/types';
 
-const TextArea: React.FC<TextAreaType> = ({
-  id,
-  rows,
-  cols,
-  placeholder,
-  label,
-}) => {
+const TextArea: React.FC<TextAreaType> = ({ id, rows, cols, placeholder }) => {
   return (
     <div className={styles.textArea}>
       <textarea
