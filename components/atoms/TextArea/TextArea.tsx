@@ -12,9 +12,6 @@ const TextArea: React.FC<TextAreaType> = ({
 }) => {
   return (
     <div className={styles.textArea}>
-      <label className={styles['textArea__label']} htmlFor={id}>
-        {label}
-      </label>
       <textarea
         className={styles['textArea__input']}
         id={id}
