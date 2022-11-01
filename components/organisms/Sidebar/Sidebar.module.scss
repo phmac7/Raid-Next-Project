@@ -3,6 +3,7 @@
   height: calc(100vh - 92px);
   background-color: var(--color-gray-900);
   padding: 10px 15px 0;
+  display: inline-block;
 
   &__list {
     width: 100%;

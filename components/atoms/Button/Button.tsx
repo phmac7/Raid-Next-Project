@@ -1,17 +1,12 @@
-import React from "react";
-import styles from "./Button.module.scss";
+import React from 'react';
+import styles from './Button.module.scss';
+import { ButtonType } from '@/models/components';
 
-interface ButtonProps {
-  label: string;
-  color?: string;
-}
-
-const Button: React.FC<ButtonProps> = ({ label, color }) => {
+const Button: React.FC<ButtonType> = ({ label, cssModule, onClick }) => {
   return (
     <button
-      className={
-        color === "error" ? styles["btn--error"] : styles["btn--primary"]
-      }
+      className={`${styles.button} ${cssModule && styles[cssModule]}`}
+      onClick={onClick}
     >
       {label}
     </button>
