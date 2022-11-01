@@ -30,4 +30,4 @@ export default {
   },
 } as Meta<TextAreaType>;
 
-export const Default: StoryObj = {};
+export const Default: StoryObj<TextAreaType> = {};
