@@ -1,0 +1,10 @@
+.layout {
+  display: grid;
+  grid-template-columns: max-content minmax(auto, 70%) max-content;
+
+  &__main {
+    background-color: var(--color-gray-700);
+    padding: 3rem 3rem;
+    border-radius: 3.5rem 3.5rem 0 0;
+  }
+}
