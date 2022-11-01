@@ -5,7 +5,7 @@ import { useEffect, useState, useRef } from 'react';
 const Home: NextPage = () => {
   const [user, SetUser] = useState<string>('');
 
-  useEffect(() => {
+  /*useEffect(() => {
     const fetchFucntion = async () => {
       const response = await fetch('/api/users');
       const data = await response.json();
@@ -14,7 +14,7 @@ const Home: NextPage = () => {
     };
 
     fetchFucntion();
-  }, []);
+  }, []);*/
 
   return <Feed />;
 };
