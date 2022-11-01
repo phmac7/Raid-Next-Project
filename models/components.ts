@@ -1,11 +1,7 @@
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, ImgHTMLAttributes } from 'react';
 
-export interface AvatarInputType {
-  id: string;
-  placeholder: string;
+export interface AvatarType extends ImgHTMLAttributes<HTMLImageElement> {
   avatar: string;
-  label: string;
-  cssModule?: string;
 }
 
 export interface ButtonType extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -15,7 +11,7 @@ export interface ButtonType extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export interface CreatePostType {
-  avatarInput: AvatarInputType;
+  avatar: AvatarType;
   button: ButtonType;
 }
 
