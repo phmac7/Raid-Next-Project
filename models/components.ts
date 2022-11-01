@@ -17,7 +17,7 @@ export interface CreatePostType {
   button: ButtonType;
 }
 
-// Modal Types
+// Post Create Modal Types
 
 export interface TextAreaType {
   id: string;
@@ -25,4 +25,10 @@ export interface TextAreaType {
   cols?: number;
   placeholder: string;
   label: string;
+}
+
+export interface Drop {
+  id: string;
+  name: string;
+  options: { value: string; text: string }[];
 }
