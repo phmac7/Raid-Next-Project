@@ -10,12 +10,40 @@
     background: rgba(0, 0, 0, 0.8);
   }
 
+  &__close {
+    margin-bottom: 0.8rem;
+    align-self: flex-end;
+    background-color: transparent;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: var(--color-primary-500);
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__control {
+    margin-bottom: 1.2rem;
+  }
+
   &__header,
   &__main {
     margin-bottom: 2.2rem;
   }
 
-  &__header,
+  &__control,
   &__main,
   &__footer {
     display: flex;

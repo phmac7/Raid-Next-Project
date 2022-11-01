@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import { Modal, CreatePost } from '@/components/molecules';
 import { Button, Dropdown, TextArea } from '@/components/atoms';
 
+import styles from './Feed.module.scss';
+
 const avatarInput = {
   placeholder: "What's is happening",
   avatar:
@@ -18,12 +20,7 @@ const gamesArray = [
 const Feed = () => {
   const modalRef = useRef<HTMLDialogElement>(null);
 
-  const modalHeader = (
-    <>
-      <h2>Create Post</h2>
-      <Dropdown id="games" name="games" options={gamesArray} />
-    </>
-  );
+  const modalHeader = <Dropdown id="games" name="games" options={gamesArray} />;
 
   const modalMain = (
     <TextArea

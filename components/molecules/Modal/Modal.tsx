@@ -1,12 +1,21 @@
 import React from 'react';
 import styles from './Modal.module.scss';
 import { ModalType } from '@/models/components';
+import { X } from 'phosphor-react';
 
 const Modal: React.FC<ModalType> = React.forwardRef(
   ({ header, main, footer }, ref) => {
     return (
       <dialog ref={ref} className={styles.modal}>
-        <header className={styles['modal__header']}>{header}</header>
+        <header className={styles['modal__header']}>
+          <div className={styles['modal__control']}>
+            <h2 className={styles['modal__title']}>Create Post</h2>
+            <button className={styles['modal__close']}>
+              <X size={20} />
+            </button>
+          </div>
+          {header}
+        </header>
         <main className={styles['modal__main']}>{main}</main>
         <footer className={styles['modal__footer']}>{footer}</footer>
       </dialog>
