@@ -1,6 +1,7 @@
 import CreatePost from '@/components/molecules/CreatePost/CreatePost';
 import { Header, Sidebar } from '@/components/organisms';
 import type { NextPage } from 'next';
+import { useEffect, useState } from 'react';
 
 const mockUser = {
   name: 'Mussum Cacildis',
@@ -21,11 +22,25 @@ const button = {
 };
 
 const Home: NextPage = () => {
+  const [user, SetUser] = useState<string>('');
+
+  useEffect(() => {
+    const fetchFucntion = async () => {
+      const response = await fetch('/api/users');
+      const data = await response.json();
+      SetUser('https:' + data.items[0].fields.profilePicture.fields.file.url);
+      console.log(data);
+    };
+
+    fetchFucntion();
+  }, []);
+
   return (
     <>
-      <Header userName={mockUser.name} userPicturePath={mockUser.picture} />
+      <Header userName={mockUser.name} userPicturePath={user} />
       <Sidebar />
       <CreatePost avatarInput={avatarInput} button={button} />
+      <img src="" alt="" />
     </>
   );
 };

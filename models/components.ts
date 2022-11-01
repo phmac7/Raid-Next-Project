@@ -16,3 +16,13 @@ export interface CreatePostType {
   avatarInput: AvatarInputType;
   button: ButtonType;
 }
+
+// Modal Types
+
+export interface TextAreaType {
+  id: string;
+  rows?: number;
+  cols?: number;
+  placeholder: string;
+  label: string;
+}
