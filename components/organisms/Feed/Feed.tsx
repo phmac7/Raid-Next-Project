@@ -40,6 +40,10 @@ const Feed = () => {
     modalRef.current?.showModal();
   };
 
+  const closeModalHandler = () => {
+    modalRef.current?.close();
+  };
+
   const button = {
     label: 'Create Post',
     onClick: openModalHandler,
@@ -49,6 +53,7 @@ const Feed = () => {
     <>
       <CreatePost avatarInput={avatarInput} button={button} />
       <Modal
+        onCloseModal={closeModalHandler}
         ref={modalRef}
         header={modalHeader}
         main={modalMain}

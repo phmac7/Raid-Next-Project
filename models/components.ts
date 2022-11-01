@@ -22,6 +22,7 @@ export interface CreatePostType {
 // Post Create Modal Types
 
 export interface ModalType {
+  onCloseModal: () => void;
   header: JSX.Element;
   main: JSX.Element;
   footer: JSX.Element;
