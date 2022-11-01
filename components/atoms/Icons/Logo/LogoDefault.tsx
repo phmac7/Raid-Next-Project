@@ -29,10 +29,10 @@ const LogoDefault = ({ width, height }: Props) => {
           y2="39.2309"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#2FBF71" />
-          <stop offset="0.552083" stop-color="#2FBF71" />
-          <stop offset="0.84375" stop-color="#0F52BA" />
-          <stop offset="1" stop-color="#249456" />
+          <stop stopColor="#2FBF71" />
+          <stop offset="0.552083" stopColor="#2FBF71" />
+          <stop offset="0.84375" stopColor="#0F52BA" />
+          <stop offset="1" stopColor="#249456" />
         </linearGradient>
       </defs>
     </svg>
