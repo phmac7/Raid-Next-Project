@@ -7,7 +7,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     const fetchFucntion = async () => {
-      const response = await fetch('/api/users');
+      const response = await fetch('/api/users/3ylBXptrDQxOV3M0hRuDlc');
       const data = await response.json();
       //SetUser('https:' + data.items[0].fields.profilePicture.fields.file.url);
       console.log(data);

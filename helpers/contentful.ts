@@ -32,14 +32,12 @@ export async function getAllEntriesFromOneContent(contentTypeId: string) {
   return response.items;
 }
 
-/*export async function getEntryById(id: string) {
-  const client = createContentfulClient();
-  const response = await client.entry.get({
-    entryId: id,
-  });
+export async function getEntryById(entryId: string) {
+  const environment = await createContentfulClient();
+  const response = await environment.getEntry(entryId);
   return response;
 }
-
+/*
 export async function getEntrysByFieldValue(
   contentTypeId: string,
   field: string,
