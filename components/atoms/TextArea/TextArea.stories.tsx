@@ -10,6 +10,24 @@ export default {
     placeholder: "What's is happening",
     label: 'Post Message',
   },
+  argTypes: {
+    rows: {
+      control: {
+        type: 'number',
+        min: 1,
+        max: 10,
+        step: 1,
+      },
+    },
+    cols: {
+      control: {
+        type: 'number',
+        min: 1,
+        max: 10,
+        step: 1,
+      },
+    },
+  },
 } as Meta<TextAreaType>;
 
 export const Default: StoryObj = {};
