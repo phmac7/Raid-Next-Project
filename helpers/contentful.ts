@@ -1,7 +1,9 @@
-import { createClient } from 'contentful';
+//import { createClient } from 'contentful';
+import { createClient } from 'contentful-management';
 
 const SPACE_ID = 'mpk7fhk3qfhm';
-const ACESS_TOKEN = 'lj4RJ475ZCecOH0dYN9fab7pmOsiltDThXFEN2ZwzZs';
+const ENVIRONMENT_ID = 'MASTER';
+const ACCESS_TOKEN = 'CFPAT-9Hg5ETk_m-UOeL6SnmwX0-mEl0J2sxdf-fA-dz9ct9U';
 
 export const contentfulTypeIds = {
   user: 'user',
@@ -12,24 +14,28 @@ export const contentfulTypeIds = {
   post: 'post',
 };
 
-export function createContentfulClient() {
+export async function createContentfulClient() {
   const client = createClient({
-    space: SPACE_ID,
-    accessToken: ACESS_TOKEN,
+    accessToken: ACCESS_TOKEN,
   });
+  const space = await client.getSpace(SPACE_ID);
+  const environment = await space.getEnvironment(ENVIRONMENT_ID);
 
-  return client;
+  return environment;
 }
 
 export async function getAllEntriesFromOneContent(contentTypeId: string) {
-  const client = createContentfulClient();
-  const response = await client.getEntries({ content_type: contentTypeId });
+  const environment = await createContentfulClient();
+  const response = await environment.getPublishedEntries({
+    content_type: contentTypeId,
+  });
+
   return response.items;
 }
 
-export async function getEntryById(id: string) {
-  const client = createContentfulClient();
-  const response = await client.getEntry(id);
+export async function getEntryById(entryId: string) {
+  const environment = await createContentfulClient();
+  const response = await environment.getEntry(entryId);
   return response;
 }
 
@@ -38,11 +44,12 @@ export async function getEntrysByFieldValue(
   field: string,
   value: string
 ) {
-  const client = createContentfulClient();
+  const environment = await createContentfulClient();
   const fieldIdentificator = `fields.${field}`;
-  const response = await client.getEntries({
+  const response = await environment.getPublishedEntries({
     content_type: contentTypeId,
     [fieldIdentificator]: value,
   });
+
   return response.items;
 }

@@ -6,12 +6,21 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const id = req.body.id;
+  const { userId } = req.query;
 
-  if (!id) {
+  if (!userId) {
     res.status(422).json({ message: 'Missing id in request body' });
+    return;
   }
 
-  const response = await getEntryById(id);
-  res.status(200).json({ items: response });
+  if (typeof userId === 'string') {
+    const response = await getEntryById(userId);
+    res.status(200).json({ items: response });
+  } else {
+    res
+      .status(502)
+      .json({
+        message: "this id isn't in the right format, string must be a string",
+      });
+  }
 }
