@@ -1,5 +1,6 @@
-import { FC } from 'react';
-import styles from './Sidebar.module.scss';
+import Link from "next/link";
+import { FC } from "react";
+import styles from "./Sidebar.module.scss";
 
 interface Props {
   title: string;
@@ -9,13 +10,15 @@ interface Props {
 
 const SidebarItem: FC<Props> = ({ title, href, icon }) => {
   return (
-    <li className={styles['sidebarItem']}>
-      <a className={styles['sidebarItem__link']} href={href}>
-        <>
-          {icon}
-          <span className={styles['sidebarItem__linkText']}>{title}</span>
-        </>
-      </a>
+    <li className={styles["sidebarItem"]}>
+      <Link href={`/${title}`}>
+        <a className={styles["sidebarItem__link"]} href={href}>
+          <>
+            {icon}
+            <span className={styles["sidebarItem__linkText"]}>{title}</span>
+          </>
+        </a>
+      </Link>
     </li>
   );
 };
