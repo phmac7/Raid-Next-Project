@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, FC } from 'react';
 import { Modal, CreatePost } from '@/components/molecules';
 import { Button, Dropdown, TextArea } from '@/components/atoms';
 
@@ -13,7 +13,7 @@ const gamesArray = [
   { text: 'League of legends', value: 'lol' },
 ];
 
-const Feed = () => {
+const Feed: FC = () => {
   const modalRef = useRef<HTMLDialogElement>(null);
 
   const modalHeader = <Dropdown id="games" name="games" options={gamesArray} />;
