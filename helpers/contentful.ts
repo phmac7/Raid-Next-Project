@@ -10,7 +10,7 @@ export const contentfulTypeIds = {
   role: 'role',
   game: 'game',
   elo: 'elo',
-  userPlayGames: 'userPlayGames',
+  userPlayGames: 'userPlaysGame',
   post: 'post',
 };
 
@@ -39,16 +39,16 @@ export async function getEntryById(entryId: string) {
   return response;
 }
 
-export async function getEntrysByFieldValue(
+export async function getEntrysByFieldIdValue(
   contentTypeId: string,
-  field: string,
-  value: string
+  fieldIdentificator: string,
+  id: string
 ) {
   const environment = await createContentfulClient();
-  const fieldIdentificator = `fields.${field}`;
+
   const response = await environment.getPublishedEntries({
     content_type: contentTypeId,
-    [fieldIdentificator]: value,
+    [fieldIdentificator]: id,
   });
 
   return response.items;

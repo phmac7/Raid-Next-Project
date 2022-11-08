@@ -58,6 +58,17 @@ export interface Role {
   sys: System;
 }
 
+export interface UserPlaysGame {
+  fields: {
+    game: Field<LinkType>;
+    elo: Field<LinkType>;
+    role: Field<string>;
+    user: Field<LinkType>;
+    nickname: Field<string>;
+  };
+  sys: System;
+}
+
 export interface Post {
   fields: {
     game: Field<LinkType>;
