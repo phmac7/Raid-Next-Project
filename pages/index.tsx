@@ -1,6 +1,6 @@
 import { Feed } from '@/components/organisms';
 import type { NextPage } from 'next';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 const Home: NextPage = () => {
   const [user, SetUser] = useState<string>('');

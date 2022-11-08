@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Dropdown from './Dropdown';
+import Dropdown from '.';
 import { DropdownType } from '@/models/components';
 
 export default {

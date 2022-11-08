@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import AvatarInput from './Avatar';
+import AvatarInput from '.';
 import styles from './avatarInput.module.scss';
 import { AvatarType } from '@/models/components';
 

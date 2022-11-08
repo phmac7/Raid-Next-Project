@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import CreatePost from './CreatePost';
+import CreatePost from '.';
 import { CreatePostType } from '@/models/components';
 
 export default {
