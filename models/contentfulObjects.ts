@@ -49,15 +49,6 @@ export interface Role {
   sys: System;
 }
 
-export interface Role {
-  fields: {
-    name: Field<string>;
-    game: Field<LinkType>;
-    icon: Field<LinkType>;
-  };
-  sys: System;
-}
-
 export interface UserPlaysGame {
   fields: {
     game: Field<LinkType>;
