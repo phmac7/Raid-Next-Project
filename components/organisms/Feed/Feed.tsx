@@ -1,5 +1,5 @@
 import React, { useRef, FC } from 'react';
-import { createPortal } from 'react-dom';
+
 import { Modal, CreatePost } from '@/components/molecules';
 import { Button, Dropdown, TextArea } from '@/components/atoms';
 
@@ -49,16 +49,13 @@ const Feed: FC = () => {
   return (
     <>
       <CreatePost avatar={avatar} button={button} />
-      {createPortal(
-        <Modal
-          onCloseModal={closeModalHandler}
-          ref={modalRef}
-          header={modalHeader}
-          main={modalMain}
-          footer={modalFooter}
-        />,
-        document.getElementById('overlays')!
-      )}
+      <Modal
+        onCloseModal={closeModalHandler}
+        ref={modalRef}
+        header={modalHeader}
+        main={modalMain}
+        footer={modalFooter}
+      />
     </>
   );
 };
