@@ -1,6 +1,6 @@
 import React, { useRef, FC, useState, useEffect } from 'react';
 import { Modal, CreatePost } from '@/components/molecules';
-import { Button, Dropdown, TextArea } from '@/components/atoms';
+import { Button, Dropdown, TextArea, FileInput } from '@/components/atoms';
 import Portal from '@/HOC/Portal';
 import { createPost, getPosts } from '@/helpers/fetch';
 import { Game } from '@/models/contentfulObjects';
@@ -56,6 +56,7 @@ const Feed: FC = () => {
 
   const modalFooter = (
     <>
+      <FileInput />
       <Button
         label="Create Post"
         onClick={() => {
