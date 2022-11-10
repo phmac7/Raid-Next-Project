@@ -1,0 +1,16 @@
+.postList {
+  max-width: 600px;
+  height: fit-content;
+
+  gap: 32px;
+  // this can be replaced if the parent component manages with gap or grid
+  margin: 16px;
+  // this can be replaced if the parent component manages with gap or grid
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5px;
+}

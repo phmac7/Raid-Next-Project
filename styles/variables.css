@@ -41,3 +41,7 @@
   --color-primary-500: #3d9a50;
   --color-primary-400: ##5bd793;
 }
+
+::backdrop {
+  --color-gray-900: rgba(18, 18, 20, 0.7);
+}

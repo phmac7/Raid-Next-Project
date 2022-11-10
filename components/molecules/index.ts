@@ -3,3 +3,7 @@ export { default as UserExpanded } from './UserExpanded/UserExpanded';
 export { default as UserInfo } from './UserInfo/UserInfo';
 export { default as UserGames } from './UserGames/UserGames';
 export { default as UserGameCard } from './UserGameCard/UserGameCard';
+export { default as PostCard } from './PostCard';
+export { default as PostList } from './PostList';
+export { default as CreatePost } from './CreatePost';
+export { default as Modal } from './Modal';
