@@ -65,7 +65,7 @@ export interface Post {
     game: Field<LinkType>;
     media: Field<LinkType>;
     message: Field<string>;
-    userAuthor: Field<LinkType>;
+    author: Field<LinkType>;
   };
   sys: System;
 }
