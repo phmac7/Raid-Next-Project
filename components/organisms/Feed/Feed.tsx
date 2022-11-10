@@ -59,7 +59,7 @@ const Feed: FC = () => {
       <Button
         label="Create Post"
         onClick={() => {
-          createPost(message);
+          createPost(game, message);
           closeModalHandler();
           console.log(allGames[0]);
         }}

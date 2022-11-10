@@ -24,7 +24,7 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/_document.js",
-    "helpers/fetch.js"
+    "helpers/fetch.ts"
   ],
   "exclude": ["node_modules"]
 }

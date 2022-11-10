@@ -12,7 +12,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === 'POST') {
-    const { message } = req.body;
+    const { message, game } = req.body;
 
     const postEntry = {
       fields: {
@@ -30,7 +30,7 @@ export default async function handler(
             sys: {
               type: 'Link',
               linkType: 'Entry',
-              id: '1uB389FD6PfFq2cKptQ9ba', //gameID from req
+              id: game, //gameID from req
             },
           },
         },

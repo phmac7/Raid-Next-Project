@@ -7,11 +7,12 @@ export const getPosts = async () => {
   return;
 };
 
-export const createPost = async (message) => {
+export const createPost = async (game: string, message: string) => {
   console.log('===== MESSAGE CREATEPOST ======', message);
   await fetch('/api/post', {
     method: 'POST',
     body: JSON.stringify({
+      game,
       message,
     }),
     headers: {
