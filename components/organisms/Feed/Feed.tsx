@@ -4,6 +4,7 @@ import { Button, Dropdown, TextArea } from '@/components/atoms';
 import Portal from '@/HOC/Portal';
 import { createPost, getPosts } from '@/helpers/fetch';
 import { Game } from '@/models/contentfulObjects';
+import { DropdownOptions } from '@/models/components';
 
 const avatar = {
   avatar:
@@ -11,26 +12,21 @@ const avatar = {
   id: 'createPost',
 };
 
-const gamesArray = [
-  { text: 'Select a game...', value: '' },
-  { text: 'Valorant', value: 'valorant' },
-  { text: 'League of legends', value: 'lol' },
-];
-
 const Feed: FC = () => {
   const [game, setGame] = useState('');
   const [message, setMessage] = useState('');
-  const [allGames, setAllGames] = useState<Game[] | []>([]);
+  const [allGames, setAllGames] = useState<DropdownOptions>([]);
 
   useEffect(() => {
     const fetchAllGames = async () => {
       const response = await fetch('/api/games');
       const games = await response.json();
-      const cleanGames = games.items.map((game: Game) => ({
-        fields: { name: game.fields.name['en-US'] },
-        sys: { id: game.sys.id },
+      const dropdownOptions = games.items.map((game: Game) => ({
+        text: game.fields.name['en-US'],
+        value: game.sys.id,
       }));
-      setAllGames(cleanGames);
+      console.log(dropdownOptions);
+      setAllGames(dropdownOptions);
     };
 
     fetchAllGames();
@@ -42,7 +38,7 @@ const Feed: FC = () => {
     <Dropdown
       id="games"
       name="games"
-      options={gamesArray}
+      options={allGames}
       onChange={(e) => setGame(e.target.value)}
       value={game}
     />

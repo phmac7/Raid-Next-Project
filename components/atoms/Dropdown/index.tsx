@@ -5,6 +5,9 @@ import { DropdownType } from '@/models/components';
 const Dropdown: React.FC<DropdownType> = ({ id, name, options, onChange }) => {
   return (
     <select className={styles.dropdown} name={name} onChange={onChange}>
+      <option disabled value="">
+        Select a option...
+      </option>
       {options.map((opt) => (
         <option
           key={opt.value}
