@@ -3,6 +3,7 @@ import { Modal, CreatePost } from '@/components/molecules';
 import { Button, Dropdown, TextArea } from '@/components/atoms';
 import Portal from '@/HOC/Portal';
 import { createPost, getPosts } from '@/helpers/fetch';
+import { Game } from '@/models/contentfulObjects';
 
 const avatar = {
   avatar:
@@ -19,6 +20,21 @@ const gamesArray = [
 const Feed: FC = () => {
   const [game, setGame] = useState('');
   const [message, setMessage] = useState('');
+  const [allGames, setAllGames] = useState<Game[] | []>([]);
+
+  useEffect(() => {
+    const fetchAllGames = async () => {
+      const response = await fetch('/api/games');
+      const games = await response.json();
+      const cleanGames = games.items.map((game: Game) => ({
+        fields: { name: game.fields.name['en-US'] },
+        sys: { id: game.sys.id },
+      }));
+      setAllGames(cleanGames);
+    };
+
+    fetchAllGames();
+  }, []);
 
   const modalRef = useRef<HTMLDialogElement>(null);
 
@@ -49,7 +65,7 @@ const Feed: FC = () => {
         onClick={() => {
           createPost(message);
           closeModalHandler();
-          console.log(game, message);
+          console.log(allGames[0]);
         }}
       />
     </>
