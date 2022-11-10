@@ -1,13 +1,14 @@
 import React, { FC } from 'react';
-import { Camera } from 'phosphor-react';
-import styles from './fileInput.module.scss';
 
-const FileInput: FC = () => {
+import styles from './fileInput.module.scss';
+import { FileInputType } from '@/models/components';
+
+const FileInput: FC<FileInputType> = ({ icon, text }) => {
   return (
     <div className={styles.fileInput}>
-      <Camera size={28} />
+      {icon}
       <label className={styles['fileInput__label']} htmlFor="file">
-        Photo
+        {text}
       </label>
       <input id="file" className={styles['fileInput__field']} type="file" />
     </div>

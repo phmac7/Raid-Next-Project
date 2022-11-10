@@ -36,6 +36,11 @@ export interface TextAreaType {
   onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
+export interface FileInputType {
+  text: string;
+  icon: JSX.Element;
+}
+
 export interface DropdownType {
   id: string;
   name: string;
