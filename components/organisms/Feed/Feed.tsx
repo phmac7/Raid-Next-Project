@@ -1,7 +1,8 @@
-import React, { useRef, FC } from 'react';
-import { createPortal } from 'react-dom';
+import React, { useRef, FC, useState, useEffect } from 'react';
 import { Modal, CreatePost } from '@/components/molecules';
 import { Button, Dropdown, TextArea } from '@/components/atoms';
+import Portal from '@/HOC/Portal';
+import { createPost, getPosts } from '@/helpers/fetch';
 
 const avatar = {
   avatar:
@@ -10,26 +11,47 @@ const avatar = {
 };
 
 const gamesArray = [
+  { text: 'Select a game...', value: '' },
   { text: 'Valorant', value: 'valorant' },
   { text: 'League of legends', value: 'lol' },
 ];
 
 const Feed: FC = () => {
+  const [game, setGame] = useState('');
+  const [message, setMessage] = useState('');
+
   const modalRef = useRef<HTMLDialogElement>(null);
 
-  const modalHeader = <Dropdown id="games" name="games" options={gamesArray} />;
+  const modalHeader = (
+    <Dropdown
+      id="games"
+      name="games"
+      options={gamesArray}
+      onChange={(e) => setGame(e.target.value)}
+      value={game}
+    />
+  );
 
   const modalMain = (
     <TextArea
       placeholder="What's happening..."
       id="message"
       label="postMessage"
+      onChange={(e) => setMessage(e.target.value)}
+      value={message}
     />
   );
 
   const modalFooter = (
     <>
-      <Button label="Create Post" />
+      <Button
+        label="Create Post"
+        onClick={() => {
+          createPost(message);
+          closeModalHandler();
+          console.log(game, message);
+        }}
+      />
     </>
   );
 
@@ -45,20 +67,22 @@ const Feed: FC = () => {
     label: 'Create Post',
     onClick: openModalHandler,
   };
+  useEffect(() => {
+    console.log('POSTS ====================', getPosts());
+  }, []);
 
   return (
     <>
       <CreatePost avatar={avatar} button={button} />
-      {createPortal(
+      <Portal>
         <Modal
           onCloseModal={closeModalHandler}
           ref={modalRef}
           header={modalHeader}
           main={modalMain}
           footer={modalFooter}
-        />,
-        document.getElementById('overlays')!
-      )}
+        />
+      </Portal>
     </>
   );
 };

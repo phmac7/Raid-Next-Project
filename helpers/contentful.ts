@@ -53,3 +53,9 @@ export async function getEntrysByFieldIdValue(
 
   return response.items;
 }
+
+export async function createEntry(contentTypeId: string, entryInfo: any) {
+  const env = await createContentfulClient();
+  const insertedEntry = await env.createEntry(contentTypeId, entryInfo);
+  await insertedEntry.publish();
+}

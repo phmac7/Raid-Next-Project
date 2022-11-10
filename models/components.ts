@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, ImgHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, ChangeEvent, ImgHTMLAttributes } from 'react';
 
 export interface AvatarType extends ImgHTMLAttributes<HTMLImageElement> {
   avatar: string;
@@ -31,10 +31,14 @@ export interface TextAreaType {
   cols?: number;
   placeholder: string;
   label: string;
+  value: string;
+  onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 export interface DropdownType {
   id: string;
   name: string;
   options: { value: string; text: string }[];
+  value: string;
+  onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
 }
