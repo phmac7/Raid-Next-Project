@@ -1,37 +1,47 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useQuery } from '@tanstack/react-query';
-import { Post } from '@/models/contentfulObjects';
-import { PostList } from '@/components/molecules';
+import { PostList, UserExpanded } from '@/components/molecules';
+import { fetchPostList, fetchUserList } from '@/services/getData';
+import { UserList } from 'phosphor-react';
 
 const ProfilePage = () => {
   const router = useRouter();
-
-  const fetchPostList = async () => {
-    const res = await fetch('/api/post');
-    const resJson = await res.json();
-    const data: Post[] = resJson.items;
-    return data;
-  };
 
   const userPosts = useQuery({
     queryKey: ['userPosts'],
     queryFn: fetchPostList,
   });
-  if (userPosts.isLoading) {
+
+  const usersList = useQuery({
+    queryKey: ['usersList'],
+    queryFn: fetchUserList,
+  });
+
+  if (userPosts.isLoading || usersList.isLoading) {
     return <div>Loading...</div>;
   }
-  if (userPosts.isError) {
+  if (userPosts.isError || usersList.isError) {
     return <div>Error</div>;
   }
+  const filteredPosts = userPosts.data.filter(
+    (post) =>
+      post.fields.author['en-US'].sys.id.toLowerCase() === router.query.id
+  );
 
-  if (userPosts.data) {
-    const filteredPosts = userPosts.data.filter(
-      (post) =>
-        post.fields.author['en-US'].sys.id.toLowerCase() === router.query.id
-    );
-    return <div>{/* <PostList postList={filteredPosts} /> */}</div>;
-  }
+  const filteredUser = usersList.data.filter(
+    (post) => post.sys.id.toLowerCase() === router.query.id
+  );
+  console.log(filteredUser);
+
+  return (
+    <div>
+      Dados Carregados!
+      {filteredPosts.map((item, i) => (
+        <p key={i}>{item.fields.author['en-US'].sys.id}</p>
+      ))}
+    </div>
+  );
 };
 
 export default ProfilePage;

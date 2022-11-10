@@ -18,8 +18,8 @@ const PostList: React.FC<PostListProps> = ({ postList }) => {
       {postList.map((el: Post, i: any) => (
         <div key={i}>
           <PostCard
-            userFullName={el.fields.author['en-US'].id}
-            userProfilePicture={el.fields.author['en-US'].id}
+            userFullName={el.fields.author['en-US'].sys.id}
+            userProfilePicture={el.fields.author['en-US'].sys.id}
             //   postContent={el.fields.message['en-US']}
             key={i}
           />

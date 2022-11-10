@@ -38,3 +38,18 @@ export interface DropdownType {
   name: string;
   options: { value: string; text: string }[];
 }
+
+export interface GameCardProps {
+    gameName: string,
+    gameImg:string,
+    elo: string,
+    eloImg: string,
+    roleImg: string,
+    role: string,
+}
+
+export interface UserExpandedProps {
+    picture: string,
+    userName: string,
+    discordId: string,
+}
