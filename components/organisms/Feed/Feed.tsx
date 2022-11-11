@@ -1,4 +1,4 @@
-import React, { useRef, FC, useState, useEffect } from 'react';
+import React, { useRef, FC, useState, useEffect, ChangeEvent } from 'react';
 import { Modal, CreatePost } from '@/components/molecules';
 import { Button, Dropdown, TextArea, FileInput } from '@/components/atoms';
 import Portal from '@/HOC/Portal';
@@ -18,6 +18,7 @@ const Feed: FC = () => {
   const [game, setGame] = useState('');
   const [message, setMessage] = useState('');
   const [allGames, setAllGames] = useState<DropdownOptions>([]);
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
 
   useEffect(() => {
     const fetchAllGames = async () => {
@@ -35,6 +36,11 @@ const Feed: FC = () => {
   }, []);
 
   const modalRef = useRef<HTMLDialogElement>(null);
+
+  const onChangeFile = async (event) => {
+    const file = URL.createObjectURL(event.target.files[0]);
+    console.log(file);
+  };
 
   const modalHeader = (
     <Dropdown
@@ -58,7 +64,13 @@ const Feed: FC = () => {
 
   const modalFooter = (
     <>
-      <FileInput text="photo" icon={<Camera size={28} />} />
+      <FileInput
+        text="photo"
+        icon={<Camera size={28} />}
+        onChange={onChangeFile}
+        value={selectedPhoto}
+      />
+      <img src={selectedPhoto} alt="" />
       <Button
         label="Create Post"
         onClick={() => {

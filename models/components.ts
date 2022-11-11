@@ -39,6 +39,8 @@ export interface TextAreaType {
 export interface FileInputType {
   text: string;
   icon: JSX.Element;
+  value: File;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface DropdownType {
