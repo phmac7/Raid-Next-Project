@@ -43,7 +43,7 @@ const menuItems = [
   {
     id: 6,
     title: 'Profile',
-    href: '',
+    href: 'profile',
     icon: <AiOutlineUser size={25} />,
   },
   {
