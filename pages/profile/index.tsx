@@ -1,6 +1,5 @@
-import { PostList } from '@/components/molecules';
 import { useRouter } from 'next/router';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const Profile = () => {
   const router = useRouter();
