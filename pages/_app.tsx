@@ -3,17 +3,27 @@ import '@/styles/variables.css';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
 import Layout from '@/layout/Layout';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import {
+  DehydratedState,
+  Hydrate,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
 const queryClient = new QueryClient();
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({
+  Component,
+  pageProps,
+}: AppProps<{ dehydratedState: DehydratedState }>) {
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider defaultTheme="dark">
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ThemeProvider>
+      <Hydrate state={pageProps.dehydratedState}>
+        <ThemeProvider defaultTheme="dark">
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ThemeProvider>
+      </Hydrate>
     </QueryClientProvider>
   );
 }
