@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes, ImgHTMLAttributes } from 'react';
+import { User } from './contentfulObjects';
 
 export interface AvatarType extends ImgHTMLAttributes<HTMLImageElement> {
   avatar: string;
@@ -48,8 +49,6 @@ export interface GameCardProps {
     role: string,
 }
 
-export interface UserExpandedProps {
-    picture: string,
-    userName: string,
-    discordId: string,
+export interface UserTitleProps {
+    user:User
 }
