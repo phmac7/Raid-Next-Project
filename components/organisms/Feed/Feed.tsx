@@ -1,7 +1,6 @@
 import React, { useRef, FC, useState, useEffect, ChangeEvent } from 'react';
 import { Modal, CreatePost } from '@/components/molecules';
 import { Button, Dropdown, TextArea, FileInput } from '@/components/atoms';
-import Portal from '@/HOC/Portal';
 import { createPost, getPosts } from '@/helpers/fetch';
 import { Game } from '@/models/contentfulObjects';
 import { DropdownOptions } from '@/models/components';
