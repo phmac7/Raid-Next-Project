@@ -7,13 +7,18 @@ export const getPosts = async () => {
   return;
 };
 
-export const createPost = async (game: string, message: string) => {
-  console.log('===== MESSAGE CREATEPOST ======', message);
+export const createPost = async (
+  game: string,
+  message: string,
+  file: string
+) => {
+  console.log('===== FILE CREATEPOST ======', file);
   await fetch('/api/post', {
     method: 'POST',
     body: JSON.stringify({
       game,
       message,
+      file,
     }),
     headers: {
       'Content-Type': 'application/json',

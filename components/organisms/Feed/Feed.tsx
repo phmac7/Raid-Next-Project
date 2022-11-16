@@ -18,7 +18,7 @@ const Feed: FC = () => {
   const [game, setGame] = useState('');
   const [message, setMessage] = useState('');
   const [allGames, setAllGames] = useState<DropdownOptions>([]);
-  const [selectedPhoto, setSelectedPhoto] = useState(null);
+  const [selectedPhoto, setSelectedPhoto] = useState<string>('');
 
   useEffect(() => {
     const fetchAllGames = async () => {
@@ -37,8 +37,9 @@ const Feed: FC = () => {
 
   const modalRef = useRef<HTMLDialogElement>(null);
 
-  const onChangeFile = async (event) => {
+  const onChangeFile = async (event: ChangeEvent) => {
     const file = URL.createObjectURL(event.target.files[0]);
+    setSelectedPhoto(file);
     console.log(file);
   };
 
@@ -65,16 +66,15 @@ const Feed: FC = () => {
   const modalFooter = (
     <>
       <FileInput
-        text="photo"
+        text={selectedPhoto ? 'Image Selected' : 'photo'}
         icon={<Camera size={28} />}
         onChange={onChangeFile}
         value={selectedPhoto}
       />
-      <img src={selectedPhoto} alt="" />
       <Button
         label="Create Post"
         onClick={() => {
-          createPost(game, message);
+          createPost(game, message, selectedPhoto);
           closeModalHandler();
           console.log(allGames[0]);
         }}

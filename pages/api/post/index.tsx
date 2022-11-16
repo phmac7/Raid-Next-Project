@@ -12,7 +12,30 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === 'POST') {
-    const { message, game } = req.body;
+    const { message, game, file } = req.body;
+    let asset = null;
+
+    /*if (file) {
+      const fileEntry = {
+        fields: {
+          title: {
+            'en-US': 'Test1',
+          },
+          description: {
+            'en-US': 'Asset description',
+          },
+          file: {
+            'en-US': {
+              contentType: 'image/jpg',
+              fileName: 'test.jpg',
+              file: file,
+            },
+          },
+        },
+      };
+
+      asset = await uploadAsset(fileEntry);
+    }*/
 
     const postEntry = {
       fields: {
