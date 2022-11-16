@@ -1,4 +1,5 @@
-import { ButtonHTMLAttributes, ImgHTMLAttributes } from 'react';
+import { type } from 'os';
+import { ButtonHTMLAttributes, ChangeEvent, ImgHTMLAttributes } from 'react';
 
 export interface AvatarType extends ImgHTMLAttributes<HTMLImageElement> {
   avatar: string;
@@ -31,10 +32,26 @@ export interface TextAreaType {
   cols?: number;
   placeholder: string;
   label: string;
+  value: string;
+  onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
+}
+
+export interface FileInputType {
+  text: string;
+  icon: JSX.Element;
+  value: File;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface DropdownType {
   id: string;
   name: string;
-  options: { value: string; text: string }[];
+  options: DropdownOptions;
+  value: string;
+  onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
 }
+
+export type DropdownOptions = {
+  value: string;
+  text: string;
+}[];

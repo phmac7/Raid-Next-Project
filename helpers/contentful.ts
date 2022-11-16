@@ -53,3 +53,15 @@ export async function getEntrysByFieldIdValue(
 
   return response.items;
 }
+
+export async function createEntry(contentTypeId: string, entryInfo: any) {
+  const environment = await createContentfulClient();
+  const insertedEntry = await environment.createEntry(contentTypeId, entryInfo);
+  await insertedEntry.publish();
+}
+
+/*export async function uploadAsset(fileEntry: any) {
+  const environment = await createContentfulClient();
+  const insertedAsset = await environment.createAssetFromFiles(fileEntry);
+  return insertedAsset;
+}*/

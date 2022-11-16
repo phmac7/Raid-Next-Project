@@ -1,0 +1,15 @@
+.fileInput {
+  display: flex;
+  align-items: center;
+
+  &__label {
+    margin-left: 1rem;
+    color: var(--color-gray-200);
+    font-size: 1.6rem;
+    text-transform: capitalize;
+  }
+
+  &__field {
+    visibility: hidden;
+  }
+}
