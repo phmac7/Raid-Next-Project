@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 const Home: NextPage = () => {
   useEffect(() => {
     const fetchFucntion = async () => {
-      const response = await fetch('/api/user_plays_game');
+      const response = await fetch('/api/assets/3Rt5pOaSKKgUEFb8SYSQxb');
       const data = await response.json();
       //SetUser('https:' + data.items[0].fields.profilePicture.fields.file.url);
       console.log(data);

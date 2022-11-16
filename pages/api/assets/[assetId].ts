@@ -1,4 +1,4 @@
-import { getEntryById } from '../../../helpers/contentful';
+import { getAssetsById } from '../../../helpers/contentful';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
@@ -14,7 +14,7 @@ export default async function handler(
   }
 
   if (typeof assetId === 'string') {
-    const response = await getEntryById(assetId);
+    const response = await getAssetsById(assetId);
     res.status(200).json({ items: response });
   } else {
     res.status(502).json({
