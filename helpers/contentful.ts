@@ -60,6 +60,12 @@ export async function createEntry(contentTypeId: string, entryInfo: any) {
   await insertedEntry.publish();
 }
 
+export async function getAssetsById(assetId: string) {
+  const environment = await createContentfulClient();
+  const asset = await environment.getAsset(assetId);
+  return asset;
+}
+
 /*export async function uploadAsset(fileEntry: any) {
   const environment = await createContentfulClient();
   const insertedAsset = await environment.createAssetFromFiles(fileEntry);
