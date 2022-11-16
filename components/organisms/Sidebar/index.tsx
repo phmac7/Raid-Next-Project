@@ -1,62 +1,67 @@
 import { SidebarItem } from '@/components/molecules';
 import { FC } from 'react';
 import styles from './Sidebar.module.scss';
-import { HiOutlineUsers, HiOutlineClock } from 'react-icons/hi';
-import { RiFileListLine } from 'react-icons/ri';
-import { TbMessages } from 'react-icons/tb';
-import { IoNotificationsOutline } from 'react-icons/io5';
-import { AiOutlineUser } from 'react-icons/ai';
-import { BsGear } from 'react-icons/bs';
-import { MdOutlineLogout } from 'react-icons/md';
+
+import {
+  Article,
+  Users,
+  Clock,
+  ChatsCircle,
+  Bell,
+  User,
+  Gear,
+  SignOut,
+  X,
+} from 'phosphor-react';
 
 const menuItems = [
   {
     id: 1,
     title: 'Feed',
     href: '',
-    icon: <RiFileListLine size={25} />,
+    icon: <Article size={24} weight="bold" />,
   },
   {
     id: 2,
     title: 'Communities',
     href: '',
-    icon: <HiOutlineUsers size={25} />,
+    icon: <Users size={24} weight="bold" />,
   },
   {
     id: 3,
     title: 'Matches',
     href: '',
-    icon: <HiOutlineClock size={25} />,
+    icon: <Clock size={24} weight="bold" />,
   },
   {
     id: 4,
     title: 'Messages',
     href: '',
-    icon: <TbMessages size={25} />,
+    icon: <ChatsCircle size={24} weight="bold" />,
   },
   {
     id: 5,
     title: 'Notifications',
     href: '',
-    icon: <IoNotificationsOutline size={25} />,
+    icon: <Bell size={24} weight="bold" />,
   },
   {
     id: 6,
     title: 'Profile',
     href: '',
-    icon: <AiOutlineUser size={25} />,
+    icon: <User size={24} weight="bold" />,
   },
   {
     id: 7,
     title: 'Settings',
     href: '',
-    icon: <BsGear size={25} />,
+    icon: <Gear size={24} weight="bold" />,
   },
   {
     id: 8,
     title: 'Logout',
     href: '',
-    icon: <MdOutlineLogout size={25} />,
+    icon: <SignOut size={24} weight="bold" />,
   },
 ];
 
@@ -70,9 +75,17 @@ const renderList = (list: any[]) =>
     />
   ));
 
-const Sidebar: FC = () => {
+interface SidebarProps {
+  onCloseMenu: () => void;
+  isMenuOpen: boolean;
+}
+
+const Sidebar: FC<SidebarProps> = ({ isMenuOpen, onCloseMenu }) => {
   return (
-    <div className={styles.sidebar}>
+    <div className={styles[`sidebar${isMenuOpen ? '--open' : ''}`]}>
+      <button className={styles['sidebar__button']} onClick={onCloseMenu}>
+        <X size={40} />
+      </button>
       <ul className={styles['sidebar__list']}>{renderList(menuItems)}</ul>
     </div>
   );
