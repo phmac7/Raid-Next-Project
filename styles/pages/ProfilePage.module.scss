@@ -1,0 +1,29 @@
+.container {
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    grid-template-rows: max-content 1fr;
+}
+
+.profile{
+    &__user{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        
+    }
+
+    &__info {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        justify-self: end;
+    }
+    &__feed{
+        grid-row-start: 2;
+        grid-row-end: 3;
+        
+    }
+    &__games{
+        grid-row-start: 2;
+        grid-row-end: 3;
+        justify-self: end;
+    }
+}
