@@ -63,9 +63,9 @@ export interface UserPlaysGame {
 export interface Post {
   fields: {
     game: Field<LinkType>;
-    media: Field<LinkType>;
+    media?: Field<LinkType>;
     message: Field<string>;
-    userAuthor: Field<LinkType>;
+    author: Field<LinkType>;
   };
-  sys: System;
+  sys?: System;
 }

@@ -1,7 +1,12 @@
-import React, { useRef, FC } from 'react';
-
+import React, { useRef, FC, useState, useEffect } from 'react';
 import { Modal, CreatePost } from '@/components/molecules';
-import { Button, Dropdown, TextArea } from '@/components/atoms';
+import { Button, Dropdown, TextArea, FileInput } from '@/components/atoms';
+import Portal from '@/HOC/Portal';
+import { createPost, getPosts } from '@/helpers/fetch';
+import { Game } from '@/models/contentfulObjects';
+import { DropdownOptions } from '@/models/components';
+
+import { Camera } from 'phosphor-react';
 
 const avatar = {
   avatar:
@@ -9,27 +14,59 @@ const avatar = {
   id: 'createPost',
 };
 
-const gamesArray = [
-  { text: 'Valorant', value: 'valorant' },
-  { text: 'League of legends', value: 'lol' },
-];
-
 const Feed: FC = () => {
+  const [game, setGame] = useState('');
+  const [message, setMessage] = useState('');
+  const [allGames, setAllGames] = useState<DropdownOptions>([]);
+
+  useEffect(() => {
+    const fetchAllGames = async () => {
+      const response = await fetch('/api/games');
+      const games = await response.json();
+      const dropdownOptions = games.items.map((game: Game) => ({
+        text: game.fields.name['en-US'],
+        value: game.sys.id,
+      }));
+      console.log(dropdownOptions);
+      setAllGames(dropdownOptions);
+    };
+
+    fetchAllGames();
+  }, []);
+
   const modalRef = useRef<HTMLDialogElement>(null);
 
-  const modalHeader = <Dropdown id="games" name="games" options={gamesArray} />;
+  const modalHeader = (
+    <Dropdown
+      id="games"
+      name="games"
+      options={allGames}
+      onChange={(e) => setGame(e.target.value)}
+      value={game}
+    />
+  );
 
   const modalMain = (
     <TextArea
       placeholder="What's happening..."
       id="message"
       label="postMessage"
+      onChange={(e) => setMessage(e.target.value)}
+      value={message}
     />
   );
 
   const modalFooter = (
     <>
-      <Button label="Create Post" />
+      <FileInput text="photo" icon={<Camera size={28} />} />
+      <Button
+        label="Create Post"
+        onClick={() => {
+          createPost(game, message);
+          closeModalHandler();
+          console.log(allGames[0]);
+        }}
+      />
     </>
   );
 
@@ -45,10 +82,14 @@ const Feed: FC = () => {
     label: 'Create Post',
     onClick: openModalHandler,
   };
+  useEffect(() => {
+    console.log('POSTS ====================', getPosts());
+  }, []);
 
   return (
     <>
       <CreatePost avatar={avatar} button={button} />
+<<<<<<< HEAD
       <Modal
         onCloseModal={closeModalHandler}
         ref={modalRef}
@@ -56,6 +97,17 @@ const Feed: FC = () => {
         main={modalMain}
         footer={modalFooter}
       />
+=======
+      <Portal>
+        <Modal
+          onCloseModal={closeModalHandler}
+          ref={modalRef}
+          header={modalHeader}
+          main={modalMain}
+          footer={modalFooter}
+        />
+      </Portal>
+>>>>>>> create-post-entry
     </>
   );
 };
