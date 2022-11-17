@@ -2,6 +2,7 @@ import {
   contentfulTypeIds,
   createEntry,
   getAllEntriesFromOneContent,
+  uploadAsset,
 } from '../../../helpers/contentful';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
@@ -13,7 +14,6 @@ export default async function handler(
 ) {
   if (req.method === 'POST') {
     const { message, game, file } = req.body;
-    let asset = null;
 
     /*if (file) {
       const fileEntry = {
@@ -28,7 +28,7 @@ export default async function handler(
             'en-US': {
               contentType: 'image/jpg',
               fileName: 'test.jpg',
-              file: file,
+              upload: '/temp/tft.jpg',
             },
           },
         },
@@ -59,6 +59,15 @@ export default async function handler(
         },
         message: {
           'en-US': message,
+        },
+        media: {
+          'en-US': {
+            sys: {
+              type: 'Link',
+              linkType: 'Asset',
+              id: '5mB5F6X4xHA4XeJjouxkDV', //gameID from req
+            },
+          },
         },
       },
     };

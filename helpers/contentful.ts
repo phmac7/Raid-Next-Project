@@ -66,8 +66,8 @@ export async function getAssetsById(assetId: string) {
   return asset;
 }
 
-/*export async function uploadAsset(fileEntry: any) {
+export async function uploadAsset(fileEntry: any) {
   const environment = await createContentfulClient();
   const insertedAsset = await environment.createAssetFromFiles(fileEntry);
   return insertedAsset;
-}*/
+}
