@@ -13,27 +13,11 @@ const avatar = {
   id: 'createPost',
 };
 
-const Feed: FC = () => {
+const Feed: FC = ({ dropdownOptions }) => {
   const [game, setGame] = useState('');
   const [message, setMessage] = useState('');
-  const [allGames, setAllGames] = useState<DropdownOptions>([]);
+  const [allGames, setAllGames] = useState<DropdownOptions>(dropdownOptions);
   const [selectedPhoto, setSelectedPhoto] = useState<string>('');
-
-  useEffect(() => {
-    const fetchAllGames = async () => {
-      const response = await fetch('/api/games');
-      const games = await response.json();
-      console.log(games);
-      const dropdownOptions = games.items.map((game: Game) => ({
-        text: game.fields.name,
-        value: game.sys.id,
-      }));
-      //console.log(dropdownOptions);
-      setAllGames(dropdownOptions);
-    };
-
-    fetchAllGames();
-  }, []);
 
   const modalRef = useRef<HTMLDialogElement>(null);
 

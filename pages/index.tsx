@@ -1,9 +1,13 @@
 import { Feed } from '@/components/organisms';
-import type { NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
+
+import { getAllEntriesFromOneContent } from '@/helpers/delivery';
+import contentfulTypeIds from '@/helpers/contentfulTypes';
+
 import { useEffect } from 'react';
 
-const Home: NextPage = () => {
-  useEffect(() => {
+const Home: NextPage = ({ games }) => {
+  /*useEffect(() => {
     const fetchFucntion = async () => {
       const response = await fetch('/api/user_plays_game', {
         method: 'POST',
@@ -21,8 +25,24 @@ const Home: NextPage = () => {
     };
 
     fetchFucntion();
-  }, []);
+  }, []);*/
 
-  return <Feed />;
+  const gamesDropdownOptions = games.map((game) => ({
+    text: game.fields.name,
+    value: game.sys.id,
+  }));
+
+  return <Feed dropdownOptions={gamesDropdownOptions} />;
 };
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const games = await getAllEntriesFromOneContent(contentfulTypeIds.game);
+
+  return {
+    props: {
+      games: games,
+    },
+  };
+};
+
 export default Home;
