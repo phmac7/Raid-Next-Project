@@ -1,12 +1,8 @@
-import {
-  contentfulTypeIds,
-  createEntry,
-  getAllEntriesFromOneContent,
-  uploadAsset,
-} from '../../../helpers/contentful';
+import { getAllEntriesFromOneContent } from '@/helpers/delivery';
+import { createEntry, uploadAsset } from '@/helpers/management';
+import contentfulTypeIds from '@/helpers/contentfulTypes';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { Post } from '@/models/contentfulObjects';
 
 export default async function handler(
   req: NextApiRequest,

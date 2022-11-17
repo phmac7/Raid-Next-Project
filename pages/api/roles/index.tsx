@@ -1,7 +1,5 @@
-import {
-  getAllEntriesFromOneContent,
-  contentfulTypeIds,
-} from '../../../helpers/contentful';
+import { getAllEntriesFromOneContent } from '@/helpers/delivery';
+import contentfulTypeIds from '@/helpers/contentfulTypes';
 
 import type { NextApiResponse, NextApiRequest } from 'next';
 

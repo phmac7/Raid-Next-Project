@@ -1,8 +1,5 @@
-import {
-  contentfulTypeIds,
-  getAllEntriesFromOneContent,
-  getEntrysByFieldIdValue,
-} from '../../../helpers/contentful';
+import { getEntrysByFieldIdValue } from '@/helpers/delivery';
+import contentfulTypeIds from '@/helpers/contentfulTypes';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
@@ -20,7 +17,7 @@ export default async function handler(
   const response = await getEntrysByFieldIdValue(
     contentfulTypeIds.userPlayGames,
     fieldIdentificator,
-    'qNcAeqto4efrhOzCCE9xA'
+    value
   );
   res.status(200).json({ items: response });
 }

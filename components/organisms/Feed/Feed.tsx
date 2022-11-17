@@ -23,11 +23,12 @@ const Feed: FC = () => {
     const fetchAllGames = async () => {
       const response = await fetch('/api/games');
       const games = await response.json();
+      console.log(games);
       const dropdownOptions = games.items.map((game: Game) => ({
-        text: game.fields.name['en-US'],
+        text: game.fields.name,
         value: game.sys.id,
       }));
-      console.log(dropdownOptions);
+      //console.log(dropdownOptions);
       setAllGames(dropdownOptions);
     };
 
@@ -39,7 +40,7 @@ const Feed: FC = () => {
   const onChangeFile = async (event: ChangeEvent) => {
     const file = URL.createObjectURL(event.target.files[0]);
     setSelectedPhoto(file);
-    console.log(file);
+    //console.log(file);
   };
 
   const modalHeader = (

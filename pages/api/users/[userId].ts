@@ -1,4 +1,4 @@
-import { getEntryById } from '../../../helpers/contentful';
+import { getEntryById } from '@/helpers/delivery';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
@@ -15,12 +15,10 @@ export default async function handler(
 
   if (typeof userId === 'string') {
     const response = await getEntryById(userId);
-    res.status(200).json({ items: response });
+    res.status(200).json({ entry: response });
   } else {
-    res
-      .status(502)
-      .json({
-        message: "this id isn't in the right format, string must be a string",
-      });
+    res.status(502).json({
+      message: "this id isn't in the right format, string must be a string",
+    });
   }
 }
