@@ -5,11 +5,12 @@ import { getAllEntriesFromOneContent } from '@/helpers/delivery';
 import contentfulTypeIds from '@/helpers/contentfulTypes';
 
 import { useEffect } from 'react';
+import { HomePageProps } from '@/models/pages';
 
-const Home: NextPage = ({ games }) => {
-  /*useEffect(() => {
+const Home: NextPage<HomePageProps> = ({ games }) => {
+  useEffect(() => {
     const fetchFucntion = async () => {
-      const response = await fetch('/api/user_plays_game', {
+      const response = await fetch('/api/users', {
         method: 'POST',
         body: JSON.stringify({
           fieldIdentificator: 'fields.user.sys.id',
@@ -25,7 +26,9 @@ const Home: NextPage = ({ games }) => {
     };
 
     fetchFucntion();
-  }, []);*/
+  }, []);
+
+  console.log(games);
 
   const gamesDropdownOptions = games.map((game) => ({
     text: game.fields.name,
