@@ -28,3 +28,12 @@ export interface Game {
   };
   sys: Sys;
 }
+
+export interface Elo {
+  fields: {
+    game: Game;
+    icon: Asset;
+    name: string;
+  };
+  sys: Sys;
+}

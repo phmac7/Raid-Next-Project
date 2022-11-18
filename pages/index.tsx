@@ -10,7 +10,7 @@ import { HomePageProps } from '@/models/pages';
 const Home: NextPage<HomePageProps> = ({ games }) => {
   useEffect(() => {
     const fetchFucntion = async () => {
-      const response = await fetch('/api/users', {
+      const response = await fetch('/api/elos', {
         method: 'POST',
         body: JSON.stringify({
           fieldIdentificator: 'fields.user.sys.id',
