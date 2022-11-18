@@ -3,7 +3,11 @@ interface System {
 }
 
 interface LinkType {
-  type: string;
+  sys: LinkTypeSys;
+}
+
+interface LinkTypeSys {
+    type: string;
   linkType: string;
   id: string;
 }

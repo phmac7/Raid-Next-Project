@@ -1,0 +1,45 @@
+.card {
+    background-color: var(--color-gray-700);
+    border-radius: 5px;
+    padding: .7rem .9rem;
+    &__heading{
+        display:flex;
+        align-items: center;
+        gap: .6rem;
+        border-bottom: 2px solid var(--color-gray-900);
+        &__img{
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        &__text{
+            &__gameTitle{
+                font-size: 1.8rem;
+                font-weight: 500;
+            }
+            &__elo {
+                display:flex;
+                align-items: center;
+                &Text{
+                    color: var(--color-gray-400);
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+
+    &__roles {
+        padding: 1rem 0;
+        display: flex;
+        align-items: center;
+        &__title{
+            font-size: 1.4rem;
+        }
+
+        &__info{
+            display:flex;
+            align-items: center;
+            color: var(--color-gray-400);
+            font-size: 1.2rem;
+        }
+    }
+}

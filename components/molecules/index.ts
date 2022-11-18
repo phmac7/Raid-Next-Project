@@ -1,4 +1,8 @@
 export { default as SidebarItem } from './SidebarItem/SidebarItem';
+export { default as UserTitle } from './UserTitle/UserTitle';
+export { default as UserInfo } from './UserInfo/UserInfo';
+export { default as UserGames } from './UserGames/UserGames';
+export { default as UserGameCard } from './UserGameCard/UserGameCard';
 export { default as PostCard } from './PostCard';
 export { default as PostList } from './PostList';
 export { default as CreatePost } from './CreatePost';

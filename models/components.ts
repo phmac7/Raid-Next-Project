@@ -1,5 +1,6 @@
 import { type } from 'os';
 import { ButtonHTMLAttributes, ChangeEvent, ImgHTMLAttributes } from 'react';
+import { User } from './responseTypes';
 
 export interface AvatarType extends ImgHTMLAttributes<HTMLImageElement> {
   avatar: string;
@@ -55,3 +56,16 @@ export type DropdownOptions = {
   value: string;
   text: string;
 }[];
+
+export interface GameCardProps {
+    gameName: string,
+    gameImg:string,
+    elo: string,
+    eloImg: string,
+    roleImg: string,
+    role: string,
+}
+
+export interface UserTitleProps {
+    user:User
+}

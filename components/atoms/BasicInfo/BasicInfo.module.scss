@@ -1,0 +1,22 @@
+.info {
+    font-size: 1.4rem;
+
+    &__property {
+        color: var(--color-gray-400);
+        font-weight: 500;
+        display: inline-block;
+
+        &::first-letter {
+            text-transform: uppercase;
+        }
+
+        padding-right: 1rem;
+    }
+
+    &__value {
+        display: inline-block;
+        color: var(--color-gray-200);
+        font-weight: 600;
+
+    }
+}

@@ -1,0 +1,28 @@
+.user {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+
+    &__photo {
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        &__name {
+            font-size: 2.8rem;
+            color: var(--color-gray-200);
+            font-weight: 600;
+        }
+
+        &__discordId {
+            font-size: 1.6rem;
+            color: var(--color-gray-400);
+            font-weight: 500;
+        }
+    }
+}
