@@ -32,8 +32,38 @@ export interface Game {
 export interface Elo {
   fields: {
     game: Game;
-    icon: Asset;
+    icon?: Asset;
     name: string;
+  };
+  sys: Sys;
+}
+
+export interface Role {
+  fields: {
+    game: Game;
+    icon?: Asset;
+    name: string;
+  };
+  sys: Sys;
+}
+
+export interface Post {
+  fields: {
+    author: string;
+    game: Game;
+    media?: Asset;
+    message: string;
+  };
+  sys: Sys;
+}
+
+export interface UserPlaysGame {
+  fields: {
+    user: string;
+    game: Game;
+    elo: Asset;
+    role: Role;
+    nickname: string;
   };
   sys: Sys;
 }
