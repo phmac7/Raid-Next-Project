@@ -28,3 +28,14 @@ export interface Game {
   };
   sys: Sys;
 }
+
+export interface User {
+    fields: {
+        discord: string;
+        email: string;
+        name: string;
+        password: string;
+        profilePicture: Asset;
+    }
+    sys: Sys;
+}
