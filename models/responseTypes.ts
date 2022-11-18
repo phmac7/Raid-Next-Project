@@ -21,6 +21,17 @@ interface Asset {
   };
 }
 
+export interface User {
+  fields: {
+    discord: string;
+    email: string;
+    name: string;
+    password: string;
+    profilePicture: Asset;
+  };
+  sys: Sys;
+}
+
 export interface Game {
   fields: {
     name: string;
@@ -49,7 +60,7 @@ export interface Role {
 
 export interface Post {
   fields: {
-    author: string;
+    author: User;
     game: Game;
     media?: Asset;
     message: string;
@@ -59,7 +70,7 @@ export interface Post {
 
 export interface UserPlaysGame {
   fields: {
-    user: string;
+    user: User;
     game: Game;
     elo: Asset;
     role: Role;
