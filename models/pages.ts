@@ -8,4 +8,5 @@ export interface ProfilePageProps {
 
 export interface HomePageProps {
   games: Game[];
+  user: User;
 }
