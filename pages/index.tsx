@@ -6,6 +6,7 @@ import contentfulTypeIds from '@/helpers/contentfulTypes';
 
 import { useEffect } from 'react';
 import { HomePageProps } from '@/models/pages';
+import { useStore } from '@/store';
 
 const Home: NextPage<HomePageProps> = ({ games, user }) => {
   /*useEffect(() => {
@@ -28,8 +29,14 @@ const Home: NextPage<HomePageProps> = ({ games, user }) => {
     fetchFucntion();
   }, []);*/
 
+  const { storedUser, setStoredUser } = useStore();
+
   console.log(games);
   console.log(user);
+
+  useEffect(() => {
+    setStoredUser(user);
+  }, []);
 
   const gamesDropdownOptions = games.map((game) => ({
     text: game.fields.name,

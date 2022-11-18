@@ -9,6 +9,7 @@ import contentfulTypes from '@/helpers/contentfulTypes';
 import { ProfilePageProps } from '@/models/pages';
 import { UserTitle, UserInfo, PostList } from '@/components/molecules';
 import Image from 'next/image';
+import { useStore } from '@/store';
 
 const ProfilePage: React.FC<ProfilePageProps> = ({
   userId,
@@ -17,6 +18,10 @@ const ProfilePage: React.FC<ProfilePageProps> = ({
 }) => {
   const [component, setComponent] =
     useState<'feed' | 'games' | 'info' | 'all'>('feed');
+
+  const { storedUser, setStoredUser } = useStore();
+
+  console.log('STOREDUSER', storedUser);
 
   //console.log(userPosts);
   console.log(userGames);
