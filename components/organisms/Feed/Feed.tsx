@@ -89,15 +89,6 @@ const Feed: FC = () => {
   return (
     <>
       <CreatePost avatar={avatar} button={button} />
-<<<<<<< HEAD
-      <Modal
-        onCloseModal={closeModalHandler}
-        ref={modalRef}
-        header={modalHeader}
-        main={modalMain}
-        footer={modalFooter}
-      />
-=======
       <Portal>
         <Modal
           onCloseModal={closeModalHandler}
@@ -107,7 +98,6 @@ const Feed: FC = () => {
           footer={modalFooter}
         />
       </Portal>
->>>>>>> create-post-entry
     </>
   );
 };
