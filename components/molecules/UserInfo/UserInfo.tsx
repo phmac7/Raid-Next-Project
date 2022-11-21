@@ -1,14 +1,10 @@
 import { BasicInfo } from '@/components/atoms';
-import { User } from '@/models/contentfulObjects';
+import { UserGeneralInfoProps } from '@/models/components';
 import Image from 'next/image';
 import React from 'react';
 import styles from './UserInfo.module.scss';
 
-interface UserInfoProps {
-  user: User;
-}
-
-const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
+const UserInfo: React.FC<UserGeneralInfoProps> = ({ user }) => {
   if (!user) {
     return (
       <div>
@@ -20,11 +16,8 @@ const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
     <div className={styles.userInfo}>
       <p className={styles.userInfo__title}>Basic Info</p>
       <div className={styles.userInfo__details}>
-        <BasicInfo property={'Email'} value={user.fields.email['en-US']} />
-        <BasicInfo
-          property={'Discord ID'}
-          value={user.fields.discord['en-US']}
-        />
+        <BasicInfo property={'Email'} value={user.fields.email} />
+        <BasicInfo property={'Discord ID'} value={user.fields.discord} />
       </div>
     </div>
   );

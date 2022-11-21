@@ -1,9 +1,13 @@
 import { useRouter } from 'next/router';
 import React from 'react';
+import { useStore } from '@/store';
 
 const Profile = () => {
   const router = useRouter();
-  router.replace('/profile/4122dyrXJiL0Sr06dde27u');
+
+  const { storedUser } = useStore();
+
+  router.replace(`/profile/${storedUser?.sys.id}`);
   return <div>Loading...</div>;
 };
 

@@ -1,11 +1,11 @@
-import Image, { StaticImageData } from "next/image";
-import { useRef } from "react";
-import styles from "./styles.module.scss";
+import Image, { StaticImageData } from 'next/image';
+import { useRef } from 'react';
+import styles from './styles.module.scss';
 
 type Props = {
   userFullName: string;
   postMessage?: string;
-  userProfilePicture: string | StaticImageData;
+  userProfilePicture: string;
 };
 
 const PostCard = ({ userFullName, userProfilePicture, postMessage }: Props) => {
@@ -32,16 +32,16 @@ const PostCard = ({ userFullName, userProfilePicture, postMessage }: Props) => {
             alt="Image of a game"
             width={50}
             height={50}
-            src={"https://" + userProfilePicture}
+            src={'https://' + userProfilePicture}
           />
           <div className={styles.postCard__userInfo}>
-            <p className={styles["postCard__text--big"]}>{userFullName}</p>
-            <p className={styles["postCard__text--dark"]}>Just now</p>
+            <p className={styles['postCard__text--big']}>{userFullName}</p>
+            <p className={styles['postCard__text--dark']}>Just now</p>
           </div>
         </div>
 
         <div className={styles.postCard__playingGame}>
-          <p className={styles["postCard__text--dark"]}>Playing</p>
+          <p className={styles['postCard__text--dark']}>Playing</p>
           <p className={styles.postCard__text}>League of Legends</p>
         </div>
       </header>
@@ -49,10 +49,10 @@ const PostCard = ({ userFullName, userProfilePicture, postMessage }: Props) => {
       <div className={styles.postCard__postContent}>
         <div className={styles.postCard__postImage}>
           <Image
-            alt={"Picture of a game"}
+            alt={'Picture of a game'}
             width={570}
             height={300}
-            src={"/Post.svg"}
+            src={'/Post.svg'}
             style={{ marginBottom: 15 }}
           />
         </div>
@@ -73,7 +73,7 @@ const PostCard = ({ userFullName, userProfilePicture, postMessage }: Props) => {
         </button>
 
         <div className={styles.postCard__commentsAndLikeInfo}>
-          <p className={styles["postCard__text--dark"]}>15 Likes</p>
+          <p className={styles['postCard__text--dark']}>15 Likes</p>
           {/* <p className={styles["postCard__text--dark"]}>15 Comments</p> */}
         </div>
 
@@ -94,7 +94,7 @@ const PostCard = ({ userFullName, userProfilePicture, postMessage }: Props) => {
             alt="Image of a game"
             width={40}
             height={40}
-            src={"https://" + userProfilePicture}
+            src={'https://' + userProfilePicture}
           />
         </div>
         <div className={styles.postCard__sideBySide}>
@@ -103,7 +103,7 @@ const PostCard = ({ userFullName, userProfilePicture, postMessage }: Props) => {
             alt="Image of a game"
             width={40}
             height={40}
-            src={"https://" + userProfilePicture}
+            src={'https://' + userProfilePicture}
           />
         </div>
         +
@@ -113,7 +113,7 @@ const PostCard = ({ userFullName, userProfilePicture, postMessage }: Props) => {
             alt="Image of a game"
             width={40}
             height={40}
-            src={"https://" + userProfilePicture}
+            src={'https://' + userProfilePicture}
           />
         </div>
         <div className={styles.postCard__sideBySide}>
@@ -122,7 +122,7 @@ const PostCard = ({ userFullName, userProfilePicture, postMessage }: Props) => {
             alt="Image of a game"
             width={40}
             height={40}
-            src={"https://" + userProfilePicture}
+            src={'https://' + userProfilePicture}
           />
         </div>
         <div className={styles.postCard__sideBySide}>
@@ -131,7 +131,7 @@ const PostCard = ({ userFullName, userProfilePicture, postMessage }: Props) => {
             alt="Image of a game"
             width={40}
             height={40}
-            src={"https://" + userProfilePicture}
+            src={'https://' + userProfilePicture}
           />
         </div>
       </div>

@@ -8,5 +8,5 @@ interface StoreType {
 
 export const useStore = create<StoreType>((set) => ({
   storedUser: null,
-  setStoredUser: (user: User) => set((state) => ({ storedUser: user })),
+  setStoredUser: (user: User) => set({ storedUser: user }),
 }));

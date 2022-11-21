@@ -46,9 +46,8 @@ const Home: NextPage<HomePageProps> = ({ games, user }) => {
   return <Feed dropdownOptions={gamesDropdownOptions} />;
 };
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const games = await getAllEntriesFromOneContent(contentfulTypeIds.game);
-
   const user = await getEntryById('4122dyrXJiL0Sr06dde27u');
 
   return {

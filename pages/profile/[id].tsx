@@ -27,14 +27,6 @@ const ProfilePage: React.FC<ProfilePageProps> = ({
   console.log(userGames);
 
   /*
-  const user = useQuery({
-    queryKey: ['user'],
-    queryFn: async () => {
-      const res = await (await fetch(`/api/users/${userId}`)).json();
-      const data: User = await res['items'];
-      return data;
-    },
-  });
 
   const elos = useQuery({
     queryKey: ['userElos'],
@@ -61,12 +53,24 @@ const ProfilePage: React.FC<ProfilePageProps> = ({
   }
 
 */
-  return <div></div>;
+  return (
+    <div className={styles.container}>
+      <div className={styles.profile__user}>
+        <UserTitle user={storedUser!} />
+      </div>
+      <div className={styles.profile__info}>
+        <UserInfo user={storedUser!} />
+      </div>
+      <div className={styles.profile__feed}>
+        <PostList postList={userPosts} user={storedUser!} />
+      </div>
+    </div>
+  );
 
   /*return (
     <div className={styles.container}>
       <div className={styles.profile__user}>
-        <UserTitle user={user.data} />
+        <UserTitle user={storedUser} />
       </div>
       <div className={styles.profile__info}>
         <UserInfo user={user.data} />
