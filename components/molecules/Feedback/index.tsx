@@ -15,7 +15,7 @@ const FeedBack = () => {
         <p className={styles['feedback__message']}>test test test test</p>
       </main>
       <footer className={styles['feedback__footer']}>
-        <Button label="Ok" />
+        <Button label="Ok" cssModule="button--success" />
       </footer>
       <div className={styles['feedback__countdown']}></div>
     </section>
