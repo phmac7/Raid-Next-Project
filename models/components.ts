@@ -39,22 +39,26 @@ export interface TextAreaType {
 export interface FileInputType {
   text: string;
   icon: JSX.Element;
-  value: File;
+  value: File | string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface DropdownType {
   id: string;
   name: string;
-  options: DropdownOptions;
-  value: string;
+  options: DropdownOptions[];
+  value: string | File;
   onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
 }
 
-export type DropdownOptions = {
+export interface DropdownOptions {
   value: string;
   text: string;
-}[];
+}
+
+export interface FeedProps {
+  dropdownOptions: DropdownOptions[];
+}
 
 export interface GameCardProps {
   gameName: string;

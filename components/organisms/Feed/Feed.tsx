@@ -3,7 +3,7 @@ import { Modal, CreatePost } from '@/components/molecules';
 import { Button, Dropdown, TextArea, FileInput } from '@/components/atoms';
 import { createPost, getPosts } from '@/helpers/fetch';
 import { Game } from '@/models/contentfulObjects';
-import { DropdownOptions } from '@/models/components';
+import { DropdownOptions, FeedProps } from '@/models/components';
 
 import { Camera } from 'phosphor-react';
 
@@ -13,18 +13,20 @@ const avatar = {
   id: 'createPost',
 };
 
-const Feed: FC = ({ dropdownOptions }) => {
+const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
   const [game, setGame] = useState('');
   const [message, setMessage] = useState('');
-  const [allGames, setAllGames] = useState<DropdownOptions>(dropdownOptions);
+  const [allGames, setAllGames] = useState<DropdownOptions[]>(dropdownOptions);
   const [selectedPhoto, setSelectedPhoto] = useState<string>('');
 
   const modalRef = useRef<HTMLDialogElement>(null);
 
-  const onChangeFile = async (event: ChangeEvent) => {
-    const file = URL.createObjectURL(event.target.files[0]);
-    setSelectedPhoto(file);
-    //console.log(file);
+  const onChangeFile = async (event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files?.length) {
+      const file = URL.createObjectURL(event.target.files[0]);
+      console.log();
+      setSelectedPhoto(file);
+    }
   };
 
   const modalHeader = (
@@ -60,7 +62,6 @@ const Feed: FC = ({ dropdownOptions }) => {
         onClick={() => {
           createPost(game, message, selectedPhoto);
           closeModalHandler();
-          console.log(allGames[0]);
         }}
       />
     </>

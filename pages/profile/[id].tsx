@@ -21,11 +21,6 @@ const ProfilePage: React.FC<ProfilePageProps> = ({
 
   const { storedUser, setStoredUser } = useStore();
 
-  console.log('STOREDUSER', storedUser);
-
-  //console.log(userPosts);
-  console.log(userGames);
-
   /*
 
   const elos = useQuery({
@@ -66,21 +61,6 @@ const ProfilePage: React.FC<ProfilePageProps> = ({
       </div>
     </div>
   );
-
-  /*return (
-    <div className={styles.container}>
-      <div className={styles.profile__user}>
-        <UserTitle user={storedUser} />
-      </div>
-      <div className={styles.profile__info}>
-        <UserInfo user={user.data} />
-      </div>
-      <div className={styles.profile__feed}>
-        <PostList postList={filteredPosts} user={user.data} />
-      </div>
-      <div className={styles.profile__games}>{/* <UserGames elo={} /> }</div>
-    </div>
-  );*/
 };
 
 export default ProfilePage;
