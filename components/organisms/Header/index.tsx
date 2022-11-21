@@ -1,24 +1,35 @@
-import LogoDefault from '@/components/atoms/Icons/Logo/LogoDefault';
+import LogoFull from '@/components/atoms/Icons/Logo/LogoFull';
 import Image from 'next/image';
 import { FC } from 'react';
 
-import { BiSearch } from 'react-icons/bi';
+import { List, MagnifyingGlass } from 'phosphor-react';
 
 import styles from './header.module.scss';
+import Logo from '@/components/atoms/Icons/Logo/Logo';
 
 interface HeaderProps {
   userName: string;
   userPicturePath: string;
+  onOpenMenu: () => void;
 }
 
-const Header: FC<HeaderProps> = ({ userName, userPicturePath }) => {
+const Header: FC<HeaderProps> = ({ userName, userPicturePath, onOpenMenu }) => {
   return (
     <nav className={styles.header}>
       <div className={styles['header__logo']}>
-        <LogoDefault width="195" height="40" />
+        <LogoFull width="195" height="40" />
+      </div>
+      <div className={styles['header__mobileMenu']}>
+        <button className={styles['header__menuButton']} onClick={onOpenMenu}>
+          <List size={36} />
+        </button>
+        <Logo />
       </div>
       <div className={styles['header__searchInputContainer']}>
-        <BiSearch size={28} className={styles['header__searchInputIcon']} />
+        <MagnifyingGlass
+          size={28}
+          className={styles['header__searchInputIcon']}
+        />
         <input
           className={styles['header__searchInput']}
           type="text"

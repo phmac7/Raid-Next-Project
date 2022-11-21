@@ -1,4 +1,4 @@
-import React, { ReactNode, FC } from 'react';
+import React, { ReactNode, FC, useState } from 'react';
 import { Header, Sidebar } from '@/components/organisms';
 import styles from './layout.module.scss';
 
@@ -13,12 +13,25 @@ const mockUser = {
 };
 
 const Layout: FC<LayoutType> = ({ children }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const openMenu = () => {
+    setIsMenuOpen(true);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
   return (
     <>
-      <Header userName={mockUser.name} userPicturePath={mockUser.picture} />
+      <Header
+        onOpenMenu={openMenu}
+        userName={mockUser.name}
+        userPicturePath={mockUser.picture}
+      />
       <section className={styles.layout}>
-        <Sidebar />
-        <main className={styles['layout__main']}>{children}</main>
+        <Sidebar onCloseMenu={closeMenu} isMenuOpen={isMenuOpen} />
+        <main className={styles['layout__main']}>{children} </main>
       </section>
     </>
   );

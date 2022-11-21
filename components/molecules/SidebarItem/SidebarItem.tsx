@@ -11,7 +11,7 @@ interface Props {
 const SidebarItem: FC<Props> = ({ title, href, icon }) => {
   return (
     <li className={styles['sidebarItem']}>
-      <Link href={`/${href ? href : title}`}>
+      <Link href={`${href ? href : title}`}>
         <a className={styles['sidebarItem__link']} href={href}>
           <>
             {icon}

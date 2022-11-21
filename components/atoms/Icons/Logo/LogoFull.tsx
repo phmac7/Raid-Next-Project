@@ -3,11 +3,11 @@ interface Props {
   height: string;
 }
 
-const LogoDefault = ({ width, height }: Props) => {
+const LogoFull = ({ width, height }: Props) => {
   return (
     <svg
-      width="195"
-      height="40"
+      width={width}
+      height={height}
       viewBox="0 0 195 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -38,4 +38,4 @@ const LogoDefault = ({ width, height }: Props) => {
     </svg>
   );
 };
-export default LogoDefault;
+export default LogoFull;

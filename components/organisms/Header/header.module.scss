@@ -1,41 +1,81 @@
 .header {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 100vw;
-  height: 92px;
-  padding: 15px;
-  justify-content: space-between;
-  align-items: center;
+  padding: 24px;
   background-color: var(--color-gray-900);
+  position: relative;
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__mobileMenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px auto 34px;
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__menuButton {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 5px;
+    transition: background 0.1s linear;
+    &:hover {
+      background-color: var(--color-gray-200);
+      color: var(--color-gray-900);
+    }
+    @media (min-width: 768px) {
+      display: none;
+      visibility: hidden;
+    }
+  }
 
   &__searchInputContainer {
-    width: 500px;
     border-radius: 5px;
+    min-width: 310px;
     background-color: var(--color-gray-700);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 14px 16px;
   }
 
   &__searchInputIcon {
     color: var(--color-gray-500);
-    margin: 14px 16px;
   }
 
   &__searchInput {
     border-radius: 5px;
     width: 100%;
     background-color: var(--color-gray-700);
-    height: 60px;
+    height: 32px;
     border: none;
     color: var(--color-gray-500);
     font-size: 18px;
+    margin-left: 50px;
   }
 
   &__userInfo {
     display: flex;
     justify-content: right;
     align-items: center;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   &__userPicture {
@@ -44,8 +84,11 @@
 
   &__userName {
     margin-right: 16px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--color-gray-200);
+    @media (min-width: 1280px) {
+      font-size: 20px;
+    }
   }
 }
