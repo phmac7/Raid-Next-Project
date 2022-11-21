@@ -7,6 +7,7 @@ import contentfulTypeIds from '@/helpers/contentfulTypes';
 import { useEffect } from 'react';
 import { HomePageProps } from '@/models/pages';
 import { useStore } from '@/store';
+import LoginPage from './LoginPage';
 
 const Home: NextPage<HomePageProps> = ({ games, user }) => {
   /*useEffect(() => {
@@ -29,21 +30,22 @@ const Home: NextPage<HomePageProps> = ({ games, user }) => {
     fetchFucntion();
   }, []);*/
 
-  const { storedUser, setStoredUser } = useStore();
+  // const { storedUser, setStoredUser } = useStore();
 
-  console.log(games);
-  console.log(user);
+  // console.log(games);
+  // console.log(user);
 
-  useEffect(() => {
-    setStoredUser(user);
-  }, []);
+  // useEffect(() => {
+  //   setStoredUser(user);
+  // }, []);
 
-  const gamesDropdownOptions = games.map((game) => ({
-    text: game.fields.name,
-    value: game.sys.id,
-  }));
+  // const gamesDropdownOptions = games.map((game) => ({
+  //   text: game.fields.name,
+  //   value: game.sys.id,
+  // }));
 
-  return <Feed dropdownOptions={gamesDropdownOptions} />;
+  // return <Feed dropdownOptions={gamesDropdownOptions} />;
+  return <LoginPage />;
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {

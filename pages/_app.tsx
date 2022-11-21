@@ -7,9 +7,9 @@ import Layout from '@/layout/Layout';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider defaultTheme="dark">
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      {/* <Layout> */}
+      <Component {...pageProps} />
+      {/* </Layout> */}
     </ThemeProvider>
   );
 }
