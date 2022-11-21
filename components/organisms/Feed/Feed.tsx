@@ -14,10 +14,21 @@ const avatar = {
 };
 
 const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
+  const [showFeedback, setShowFeedback] = useState<boolean>(false);
   const [game, setGame] = useState('');
   const [message, setMessage] = useState('');
   const [allGames, setAllGames] = useState<DropdownOptions[]>(dropdownOptions);
   const [selectedPhoto, setSelectedPhoto] = useState<string>('');
+
+  useEffect(() => {
+    const timerFeedback = setTimeout(() => {
+      setShowFeedback(false);
+    }, 5000);
+
+    () => {
+      clearTimeout(timerFeedback);
+    };
+  }, [showFeedback]);
 
   const modalRef = useRef<HTMLDialogElement>(null);
 
@@ -80,9 +91,14 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
     onClick: openModalHandler,
   };
 
+  const showFeedbackHandler = () => {
+    setShowFeedback(true);
+  };
+
   return (
     <>
       <CreatePost avatar={avatar} button={button} />
+      <button onClick={showFeedbackHandler}>Show Feedback</button>
       <Modal
         onCloseModal={closeModalHandler}
         ref={modalRef}
@@ -90,11 +106,13 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
         main={modalMain}
         footer={modalFooter}
       />
-      <Feedback
-        title="Success"
-        message="Your post was created. You can see that in your profile page."
-        status="warning"
-      />
+      {showFeedback && (
+        <Feedback
+          title="Success"
+          message="Your post was created. You can see that in your profile page."
+          status="warning"
+        />
+      )}
     </>
   );
 };
