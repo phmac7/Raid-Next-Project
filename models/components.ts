@@ -82,3 +82,11 @@ export interface PostListProps {
   postList: Post[] | [];
   user: User;
 }
+
+//Feedback types
+
+export interface FeedbackProps {
+  status: 'success' | 'error' | 'warning';
+  title: string;
+  message: string;
+}

@@ -90,7 +90,11 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
         main={modalMain}
         footer={modalFooter}
       />
-      <Feedback />
+      <Feedback
+        title="Success"
+        message="Your post was created. You can see that in your profile page."
+        status="warning"
+      />
     </>
   );
 };

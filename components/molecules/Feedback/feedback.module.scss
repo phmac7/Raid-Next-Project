@@ -1,6 +1,5 @@
 .feedback {
-  background-color: var(--color-primary-500);
-  min-width: 48rem;
+  width: 48rem;
   border-radius: 0.5rem;
   padding-top: 1.8rem;
   display: flex;
@@ -9,6 +8,18 @@
   position: fixed;
   right: 2rem;
   bottom: 2rem;
+
+  &--success {
+    background-color: var(--color-primary-500);
+  }
+
+  &--error {
+    background-color: var(--color-error-500);
+  }
+
+  &--warning {
+    background-color: var(--color-warning-500);
+  }
 
   &__header,
   &__main,

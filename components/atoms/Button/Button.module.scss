@@ -24,6 +24,26 @@
     }
   }
 
+  &--error {
+    background-color: var(--color-gray-200);
+    color: var(--color-error-500);
+
+    &:hover {
+      background-color: var(--color-gray-900);
+      color: var(--color-error-500);
+    }
+  }
+
+  &--warning {
+    background-color: var(--color-gray-200);
+    color: var(--color-warning-500);
+
+    &:hover {
+      background-color: var(--color-gray-900);
+      color: var(--color-warning-500);
+    }
+  }
+
   &--createPost {
     align-self: flex-end;
   }
