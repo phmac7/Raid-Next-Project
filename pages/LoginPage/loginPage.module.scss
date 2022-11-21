@@ -16,7 +16,6 @@
     align-items: center;
     justify-content: center;
     padding: 40px 0 20px;
-    margin-bottom: 20px;
 
     @media (min-width: 768px) {
       justify-content: flex-start;
@@ -224,7 +223,7 @@
     background-color: var(--color-gray-200);
     color: var(--color-gray-900);
     border-radius: 5px;
-    margin-bottom: 36px;
+    margin-bottom: 32px;
     width: 80%;
     min-width: 210px;
     @media (min-width: 600px) {
