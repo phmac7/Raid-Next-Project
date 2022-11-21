@@ -1,2 +1,61 @@
 .feedback {
+  background-color: var(--color-primary-500);
+  min-width: 48rem;
+  border-radius: 0.5rem;
+  padding-top: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+
+  &__header,
+  &__main,
+  &__footer {
+    margin-bottom: 2.2rem;
+    width: 100%;
+    padding-left: 2.2rem;
+    padding-right: 2.2rem;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    margin-left: 1.8rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
+
+  &__main {
+  }
+
+  &__message {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__countdown {
+    width: 100%;
+    height: 0.6rem;
+    background-color: var(--color-gray-200);
+    animation: countdown 5s forwards;
+  }
+
+  @keyframes countdown {
+    0% {
+      width: 100%;
+    }
+    100% {
+      width: 0%;
+    }
+  }
 }
