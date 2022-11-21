@@ -1,11 +1,12 @@
 import React from 'react';
+import { createPortal } from 'react-dom';
 import styles from './feedback.module.scss';
 import { CheckCircle } from 'phosphor-react';
 
 import { Button } from '@/components/atoms';
 
 const FeedBack = () => {
-  return (
+  const feedback = (
     <section className={styles.feedback}>
       <header className={styles['feedback__header']}>
         <CheckCircle size={48} />
@@ -20,6 +21,12 @@ const FeedBack = () => {
       <div className={styles['feedback__countdown']}></div>
     </section>
   );
+
+  if (typeof window === 'object') {
+    return createPortal(feedback, document.getElementById('overlays')!);
+  }
+
+  return feedback;
 };
 
 export default FeedBack;
