@@ -1,6 +1,11 @@
 import { ButtonHTMLAttributes, ChangeEvent, ImgHTMLAttributes } from 'react';
 import { User, Post } from './responseTypes';
 
+export interface SidebarProps {
+  onCloseMenu: () => void;
+  isMenuOpen: boolean;
+}
+
 export interface AvatarType extends ImgHTMLAttributes<HTMLImageElement> {
   avatar: string;
 }
