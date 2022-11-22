@@ -78,6 +78,7 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
   };
 
   const addPostHandler = async () => {
+    closeModalHandler();
     setIsLoading(true);
     const response = await createPost(game, message, selectedPhoto);
     const feedbackObject = {
@@ -88,7 +89,6 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
     };
     setFeedbackInfo(feedbackObject);
     setIsLoading(false);
-    closeModalHandler();
   };
 
   const modalHeader = (
@@ -147,7 +147,7 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
           onClose={closeFeedbackHandler}
         />
       )}
-      {!isLoading && <Spinner />}
+      {isLoading && <Spinner />}
     </>
   );
 };
