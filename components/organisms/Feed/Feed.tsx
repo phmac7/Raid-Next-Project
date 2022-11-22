@@ -1,6 +1,12 @@
 import React, { useRef, FC, useState, useEffect, ChangeEvent } from 'react';
 import { Modal, CreatePost, Feedback } from '@/components/molecules';
-import { Button, Dropdown, TextArea, FileInput } from '@/components/atoms';
+import {
+  Button,
+  Dropdown,
+  TextArea,
+  FileInput,
+  Spinner,
+} from '@/components/atoms';
 import { createPost, getPosts } from '@/helpers/fetch';
 import { Game } from '@/models/contentfulObjects';
 import {
@@ -129,6 +135,7 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
         main={modalMain}
         footer={modalFooter}
       />
+      <Spinner />
       {feedbackInfo.show && (
         <Feedback
           title={feedbackInfo.title}
