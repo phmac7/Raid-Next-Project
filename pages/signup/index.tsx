@@ -19,7 +19,7 @@ const Signup = () => {
       </header>
       <div className={styles['signupPage__signupFormContainer']}>
         <div className={styles['signupPage__titleContainer']}>
-          <h2 className={styles['signupPage__title']}>Getting Startede</h2>
+          <h2 className={styles['signupPage__title']}>Getting Started</h2>
           <span className={styles['signupPage__subtitle']}>
             Create an account and connect to other players.
           </span>
@@ -51,23 +51,42 @@ const Signup = () => {
               placeholder="example@valtech.com"
             />
           </div>
-          <label className={styles['signupPage__label']} htmlFor="password">
-            Password
-          </label>
-          <div className={styles['signupPage__inputContainer']}>
-            <LockSimple size={24} className={styles['signupPage__icon']} />
-            <input
-              className={styles['signupPage__input']}
-              type="password"
-              name="password"
-              id="password"
-              placeholder="********"
-            />
+          <div className={styles['signupPage__passwordContainer']}>
+            <div className={styles['signupPage__passwordInputLabelContainer']}>
+              <label className={styles['signupPage__label']} htmlFor="password">
+                Password
+              </label>
+              <div className={styles['signupPage__inputContainer']}>
+                <LockSimple size={24} className={styles['signupPage__icon']} />
+                <input
+                  className={styles['signupPage__input']}
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="********"
+                />
+              </div>
+            </div>
+            <div className={styles['signupPage__passwordInputLabelContainer']}>
+              <label className={styles['signupPage__label']} htmlFor="password">
+                Confirm Password
+              </label>
+              <div className={styles['signupPage__inputContainer']}>
+                <LockSimple size={24} className={styles['signupPage__icon']} />
+                <input
+                  className={styles['signupPage__input']}
+                  type="password"
+                  name="confirm-password"
+                  id="confirm-password"
+                  placeholder="********"
+                />
+              </div>
+            </div>
           </div>
+          <label className={styles['signupPage__label']} htmlFor="birthday">
+            Date of birth
+          </label>
           <div className={styles['signupPage__inputDateContainer']}>
-            <label className={styles['signupPage__label']} htmlFor="birthday">
-              Date of birth
-            </label>
             <input
               className={styles['signupPage__birthday']}
               type="date"
@@ -75,10 +94,11 @@ const Signup = () => {
               id="birthday"
             />
           </div>
-          <button type="submit" className={styles['signupPage__signInBtn']}>
+          <button type="submit" className={styles['signupPage__signupBtn']}>
             Sign up
           </button>
         </form>
+        <span className={styles['signupPage__divider']}>OR</span>
         <button type="submit" className={styles['signupPage__googleBtn']}>
           <GoogleLogo
             weight="bold"

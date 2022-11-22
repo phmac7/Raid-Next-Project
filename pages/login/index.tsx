@@ -65,7 +65,10 @@ const LoginPage = () => {
               Remember me
             </label>
             <Link href="/">
-              <a className={styles['loginPage__password']}> Forgot password?</a>
+              <a className={styles['loginPage__forgotPassword']}>
+                {' '}
+                Forgot password?
+              </a>
             </Link>
           </div>
           <button type="submit" className={styles['loginPage__signInBtn']}>

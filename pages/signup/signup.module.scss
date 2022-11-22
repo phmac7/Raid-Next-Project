@@ -1,4 +1,4 @@
-.loginPage {
+.signupPage {
   height: 100%;
   width: 100%;
   display: flex;
@@ -24,7 +24,7 @@
     }
   }
 
-  &__loginFormContainer {
+  &__signupFormContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,7 +42,7 @@
     min-width: 240px;
   }
 
-  &__loginForm {
+  &__signupForm {
     width: 100%;
     max-width: 504px;
     display: flex;
@@ -65,17 +65,19 @@
   }
 
   &__subtitle {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 20px;
+    letter-spacing: -0.5px;
 
     @media (min-width: 600px) {
-      font-size: 18px;
+      font-size: 16px;
     }
     @media (min-width: 768px) {
-      font-size: 22px;
+      font-size: 18px;
     }
   }
 
+  &__inputDateContainer,
   &__inputContainer {
     min-width: 200px;
     display: flex;
@@ -119,79 +121,37 @@
     }
   }
 
-  &__checkboxContainer {
-    padding: 4px 10px;
-    display: flex;
-    align-items: center;
+  &__passwordContainer {
+    @media (min-width: 600px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &__passwordInputLabelContainer {
     justify-content: space-between;
-    margin-bottom: 20px;
-    min-width: 200px;
-  }
-
-  &__checkbox {
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: transparent;
-    margin-right: 10px;
-    font: inherit;
-    color: currentColor;
-    width: 18px;
-    height: 18px;
-    border: 2px solid currentColor;
-    border-radius: 5px;
-    transform: translateY(-0.075em);
-    display: grid;
-    place-content: center;
-    background-color: var(--color-gray-700);
-
-    @media (min-width: 600px) {
-      width: 22px;
-      height: 22px;
-      line-height: 34px;
-      font-size: 18px;
-    }
-
-    &::before {
-      content: '';
-      width: 12px;
-      height: 12px;
-      transform: scale(0);
-      transition: 120ms transform ease-in-out;
-      box-shadow: inset 1em 1em var(--color-primary-400);
-      @media (min-width: 600px) {
-        width: 16px;
-        height: 16px;
-      }
-    }
-    &:checked::before {
-      transform: scale(1);
-      transform-origin: bottom left;
-      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-    }
-    &:focus {
-      outline: max(2px, 0.15em) solid currentColor;
-      outline-offset: 0.3px;
-    }
-  }
-  &__checkboxLabel {
-    font-size: 12px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: left;
     @media (min-width: 600px) {
-      font-size: 16px;
+      max-width: 210px;
     }
   }
-  &__password {
+
+  &__birthday {
+    border: none;
+    background-color: transparent;
     font-size: 12px;
-    color: var(--color-gray-200);
-    text-decoration: none;
-    text-align: end;
+    color: var(--color-gray-500);
     @media (min-width: 600px) {
+      font-size: 14px;
+    }
+    @media (min-width: 700px) {
       font-size: 16px;
     }
   }
 
-  &__signInBtn {
+  &__signupBtn {
     padding: 8px;
     font-size: 16px;
     font-weight: bold;
@@ -208,8 +168,42 @@
 
   &__divider {
     margin-bottom: 22px;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
+    position: relative;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 1px;
+      background: rgb(194, 194, 194);
+      background: linear-gradient(
+        90deg,
+        rgb(70, 70, 70) 0%,
+        rgb(140, 140, 140) 12%,
+        rgba(255, 255, 255, 1) 25%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(255, 255, 255, 1) 75%,
+        rgb(140, 140, 140) 88%,
+        rgb(70, 70, 70) 100%
+      );
+      @media (min-width: 600px) {
+        width: 180px;
+      }
+    }
+    &::after {
+      left: -132px;
+      top: 10px;
+      @media (min-width: 600px) {
+        left: -194px;
+      }
+    }
+    &::before {
+      left: 36px;
+      top: 10px;
+    }
   }
 
   &__googleBtn {

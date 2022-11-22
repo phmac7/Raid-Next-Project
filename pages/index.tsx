@@ -7,8 +7,8 @@ import contentfulTypeIds from '@/helpers/contentfulTypes';
 import { useEffect } from 'react';
 import { HomePageProps } from '@/models/pages';
 import { useStore } from '@/store';
-import LoginPage from './LoginPage';
-import SignupPage from './SignupPage';
+import LoginPage from './login';
+import SignupPage from './signup';
 
 const Home: NextPage<HomePageProps> = ({ games, user }) => {
   /*useEffect(() => {
