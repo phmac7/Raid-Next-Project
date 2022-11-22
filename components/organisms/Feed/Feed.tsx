@@ -31,6 +31,7 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
     show: false,
   });
   const [allGames, setAllGames] = useState<DropdownOptions[]>(dropdownOptions);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const [game, setGame] = useState('');
   const [message, setMessage] = useState('');
@@ -77,6 +78,7 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
   };
 
   const addPostHandler = async () => {
+    setIsLoading(true);
     const response = await createPost(game, message, selectedPhoto);
     const feedbackObject = {
       title: response.title,
@@ -85,6 +87,7 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
       show: true,
     };
     setFeedbackInfo(feedbackObject);
+    setIsLoading(false);
     closeModalHandler();
   };
 
@@ -135,7 +138,7 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
         main={modalMain}
         footer={modalFooter}
       />
-      <Spinner />
+
       {feedbackInfo.show && (
         <Feedback
           title={feedbackInfo.title}
@@ -144,6 +147,7 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
           onClose={closeFeedbackHandler}
         />
       )}
+      {!isLoading && <Spinner />}
     </>
   );
 };
