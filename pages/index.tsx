@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { HomePageProps } from '@/models/pages';
 import { useStore } from '@/store';
 import LoginPage from './LoginPage';
+import SignupPage from './SignupPage';
 
 const Home: NextPage<HomePageProps> = ({ games, user }) => {
   /*useEffect(() => {
@@ -45,7 +46,7 @@ const Home: NextPage<HomePageProps> = ({ games, user }) => {
   // }));
 
   // return <Feed dropdownOptions={gamesDropdownOptions} />;
-  return <LoginPage />;
+  return <SignupPage />;
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
