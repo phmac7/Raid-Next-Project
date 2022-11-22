@@ -11,27 +11,15 @@ export default async function handler(
   if (req.method === 'POST') {
     const { message, game, file } = req.body;
 
-    /*if (file) {
-      const fileEntry = {
-        fields: {
-          title: {
-            'en-US': 'Test1',
-          },
-          description: {
-            'en-US': 'Asset description',
-          },
-          file: {
-            'en-US': {
-              contentType: 'image/jpg',
-              fileName: 'test.jpg',
-              upload: '/temp/tft.jpg',
-            },
-          },
-        },
-      };
-
-      asset = await uploadAsset(fileEntry);
-    }*/
+    if (!message || !game) {
+      res.status(200).json({
+        status: 'error',
+        title: 'Missing Fields',
+        message:
+          'Error in create a new post. Fill all fields before create another one.',
+      });
+      return;
+    }
 
     const postEntry = {
       fields: {
@@ -67,7 +55,14 @@ export default async function handler(
         },
       },
     };
-    createEntry(contentfulTypeIds.post, postEntry);
+
+    const response = await createEntry(contentfulTypeIds.post, postEntry);
+    res.status(200).json({
+      status: 'success',
+      title: 'New Post Created',
+      message: 'Your post was created. You can see that in your profile page.',
+      post: response,
+    });
   }
   if (req.method === 'GET') {
     const response = await getAllEntriesFromOneContent(contentfulTypeIds.post);

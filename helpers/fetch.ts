@@ -12,8 +12,8 @@ export const createPost = async (
   message: string,
   file: string
 ) => {
-  console.log('===== FILE CREATEPOST ======', file);
-  await fetch('/api/post', {
+  //console.log('===== FILE CREATEPOST ======', file);
+  const response = await fetch('/api/post', {
     method: 'POST',
     body: JSON.stringify({
       game,
@@ -23,5 +23,7 @@ export const createPost = async (
     headers: {
       'Content-Type': 'application/json',
     },
-  }).then((res) => res);
+  });
+  const data = await response.json();
+  return data;
 };

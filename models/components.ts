@@ -91,3 +91,10 @@ export interface FeedbackProps {
   message: string;
   onClose: () => void;
 }
+
+export interface FeddbackObject {
+  status: 'success' | 'error' | 'warning';
+  title: string;
+  message: string;
+  show: boolean;
+}
