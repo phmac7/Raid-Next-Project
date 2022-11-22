@@ -5,18 +5,26 @@ import { CheckCircle, WarningCircle, XCircle } from 'phosphor-react';
 import { FeedbackProps } from '@/models/components';
 import { Button } from '@/components/atoms';
 
-const FeedBack: FC<FeedbackProps> = ({ status, title, message }) => {
+const FeedBack: FC<FeedbackProps> = ({ status, title, message, onClose }) => {
+  let icon = <CheckCircle size={48} />;
+
+  if (status === 'error') {
+    icon = <XCircle size={48} />;
+  } else if (status === 'warning') {
+    icon = <WarningCircle size={48} />;
+  }
+
   const feedback = (
     <section className={`${styles.feedback} ${styles[`feedback--${status}`]}`}>
       <header className={styles['feedback__header']}>
-        <CheckCircle size={48} />
+        {icon}
         <h2 className={styles['feedback__title']}>{title}</h2>
       </header>
       <main className={styles['feedback__main']}>
         <p className={styles['feedback__message']}>{message}</p>
       </main>
       <footer className={styles['feedback__footer']}>
-        <Button label="Ok" cssModule={`button--${status}`} />
+        <Button onClick={onClose} label="Ok" cssModule={`button--${status}`} />
       </footer>
       <div className={styles['feedback__countdown']}></div>
     </section>

@@ -89,4 +89,5 @@ export interface FeedbackProps {
   status: 'success' | 'error' | 'warning';
   title: string;
   message: string;
+  onClose: () => void;
 }

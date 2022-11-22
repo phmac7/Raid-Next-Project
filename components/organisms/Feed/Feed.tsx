@@ -21,14 +21,22 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
   const [selectedPhoto, setSelectedPhoto] = useState<string>('');
 
   useEffect(() => {
-    const timerFeedback = setTimeout(() => {
-      setShowFeedback(false);
-    }, 5000);
+    let timerFeedback: NodeJS.Timeout;
 
-    () => {
+    if (showFeedback) {
+      timerFeedback = setTimeout(() => {
+        setShowFeedback(false);
+      }, 5000);
+    }
+
+    return () => {
       clearTimeout(timerFeedback);
     };
   }, [showFeedback]);
+
+  const closeFeedbackHandler = () => {
+    setShowFeedback(false);
+  };
 
   const modalRef = useRef<HTMLDialogElement>(null);
 
@@ -110,7 +118,8 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
         <Feedback
           title="Success"
           message="Your post was created. You can see that in your profile page."
-          status="warning"
+          status="success"
+          onClose={closeFeedbackHandler}
         />
       )}
     </>
