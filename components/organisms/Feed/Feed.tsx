@@ -122,7 +122,6 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
   return (
     <>
       <CreatePost avatar={avatar} button={button} />
-      <button onClick={showFeedbackHandler}>Show Feedback</button>
       <Modal
         onCloseModal={closeModalHandler}
         ref={modalRef}
