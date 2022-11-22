@@ -30,12 +30,14 @@ const Home: NextPage<HomePageProps> = ({ games, user }) => {
   }, []);*/
 
   const { storedUser, setStoredUser } = useStore();
+  const { storedUserGames, setStoredUserGames } = useStore();
 
   console.log(games);
   console.log(user);
 
   useEffect(() => {
     setStoredUser(user);
+    setStoredUserGames(games);
   }, []);
 
   const gamesDropdownOptions = games.map((game) => ({

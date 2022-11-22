@@ -1,10 +1,10 @@
 import { BasicInfo } from '@/components/atoms';
-import { UserGeneralInfoProps } from '@/models/components';
+import { UserInfoProps } from '@/models/components';
 import Image from 'next/image';
 import React from 'react';
 import styles from './UserInfo.module.scss';
 
-const UserInfo: React.FC<UserGeneralInfoProps> = ({ user }) => {
+const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
   if (!user) {
     return (
       <div>
