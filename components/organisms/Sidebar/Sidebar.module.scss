@@ -1,5 +1,5 @@
 .sidebar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 240px;
@@ -13,6 +13,7 @@
 
   @media (min-width: 768px) {
     position: static;
+    top: 0;
     display: block;
     transform: translateX(0);
   }
