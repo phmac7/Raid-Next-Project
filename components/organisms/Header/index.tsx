@@ -6,14 +6,15 @@ import { List, MagnifyingGlass } from 'phosphor-react';
 
 import styles from './header.module.scss';
 import Logo from '@/components/atoms/Icons/Logo/Logo';
+import { useStore } from '@/store';
 
 interface HeaderProps {
-  userName: string;
-  userPicturePath: string;
   onOpenMenu: () => void;
 }
 
-const Header: FC<HeaderProps> = ({ userName, userPicturePath, onOpenMenu }) => {
+const Header: FC<HeaderProps> = ({ onOpenMenu }) => {
+  const { storedUser, setStoredUser } = useStore();
+
   return (
     <nav className={styles.header}>
       <div className={styles['header__logo']}>
@@ -41,11 +42,17 @@ const Header: FC<HeaderProps> = ({ userName, userPicturePath, onOpenMenu }) => {
       </div>
       {/* TODO - add label to search, make it invisible*/}
       <div className={styles['header__userInfo']}>
-        <span className={styles['header__userName']}>{userName}</span>
+        <span className={styles['header__userName']}>
+          {storedUser?.fields.name}
+        </span>
         <Image
           className={styles['header__userPicture']}
-          src={userPicturePath}
-          alt={`picture of ${userName}`}
+          src={
+            storedUser
+              ? 'https://' + storedUser!.fields.profilePicture.fields.file.url
+              : ''
+          }
+          alt={`picture of ${storedUser?.fields.name}`}
           width="60px"
           height="60px"
         />

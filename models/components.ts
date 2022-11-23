@@ -83,7 +83,7 @@ export interface UserInfoProps {
 
 export interface PostListProps {
   postList: Post[] | [];
-  user: User;
+  //user: User;
 }
 
 export interface SidebarProps {

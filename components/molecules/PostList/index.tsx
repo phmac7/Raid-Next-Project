@@ -5,13 +5,15 @@ import styles from './styles.module.scss';
 import { PostListProps } from '@/models/components';
 import { Post } from '@/models/responseTypes';
 
-const PostList: React.FC<PostListProps> = ({ postList, user }) => {
+const PostList: React.FC<PostListProps> = ({ postList }) => {
   return (
     <div className={styles.postList}>
-      {postList.map((el: Post, i: number) => (
+      {postList.map((post: Post, i: number) => (
         <PostCard
-          userFullName={user.fields.name}
-          userProfilePicture={user.fields.profilePicture.fields.file.url}
+          userFullName={post.fields.author.fields.name}
+          userProfilePicture={
+            post.fields.author.fields.profilePicture.fields.file.url
+          }
           //postMessage={el.fields.message}
           key={i}
         />

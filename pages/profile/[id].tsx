@@ -49,7 +49,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({
             shownComponent === 'feed' ? styles.profile__visible : ''
           }`}
         >
-          <PostList postList={userPosts} user={storedUser!} />
+          <PostList postList={userPosts} />
         </div>
         <div
           className={`${styles.profile__games} ${
