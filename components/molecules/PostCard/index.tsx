@@ -6,9 +6,15 @@ type Props = {
   userFullName: string;
   postMessage?: string;
   userProfilePicture: string;
+  postImage?: string;
 };
 
-const PostCard = ({ userFullName, userProfilePicture, postMessage }: Props) => {
+const PostCard = ({
+  userFullName,
+  userProfilePicture,
+  postMessage,
+  postImage,
+}: Props) => {
   const heart = useRef<HTMLDivElement | null>(null);
 
   function changeHeartColor() {
@@ -22,6 +28,8 @@ const PostCard = ({ userFullName, userProfilePicture, postMessage }: Props) => {
   // function openCommentModal() {
   //   // ...backlog
   // }
+
+  console.log(postImage);
 
   return (
     <section className={styles.postCard}>
@@ -48,18 +56,17 @@ const PostCard = ({ userFullName, userProfilePicture, postMessage }: Props) => {
 
       <div className={styles.postCard__postContent}>
         <div className={styles.postCard__postImage}>
-          <Image
-            alt={'Picture of a game'}
-            width={570}
-            height={300}
-            src={'/Post.svg'}
-            style={{ marginBottom: 15 }}
-          />
+          {postImage && (
+            <Image
+              alt={'Picture of a game'}
+              width={570}
+              height={300}
+              src={'https://' + postImage}
+              style={{ marginBottom: 15 }}
+            />
+          )}
         </div>
-        <p className={styles.postCard__text}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim veniam
-          harum vero nisi, aliquid praesentium odio?
-        </p>
+        <p className={styles.postCard__text}>{postMessage}</p>
       </div>
 
       <hr />

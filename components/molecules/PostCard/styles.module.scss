@@ -41,7 +41,7 @@
     align-items: center;
   }
 
-  &__postContent{
+  &__postContent {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,6 +51,7 @@
   &__text {
     font-weight: 400;
     font-size: 14px;
+    align-self: flex-start;
     color: var(--color-gray-200);
     &--big {
       font-size: 18px;
@@ -104,7 +105,7 @@
       height: 20.83px;
       border-radius: 6.6px 6.6px 0 0;
       background-color: #fff;
-      content: "";
+      content: '';
       cursor: pointer;
       transition: background 0.4s;
     }
@@ -119,7 +120,7 @@
       height: 20.83px;
       border-radius: 40px 40px 0 0;
       background-color: #fff;
-      content: "";
+      content: '';
       cursor: pointer;
       transition: background 0.4s;
     }

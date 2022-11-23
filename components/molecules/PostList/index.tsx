@@ -6,6 +6,8 @@ import { PostListProps } from '@/models/components';
 import { Post } from '@/models/responseTypes';
 
 const PostList: React.FC<PostListProps> = ({ postList }) => {
+  console.log(postList[0].fields.media?.fields.file.url);
+
   return (
     <div className={styles.postList}>
       {postList.map((post: Post, i: number) => (
@@ -14,7 +16,8 @@ const PostList: React.FC<PostListProps> = ({ postList }) => {
           userProfilePicture={
             post.fields.author.fields.profilePicture.fields.file.url
           }
-          //postMessage={el.fields.message}
+          postMessage={post.fields.message}
+          postImage={post.fields.media?.fields.file.url}
           key={i}
         />
       ))}
