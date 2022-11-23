@@ -3,8 +3,17 @@ import Link from 'next/link';
 import { GoogleLogo, At, LockSimple } from 'phosphor-react';
 import styles from './loginPage.module.scss';
 import bg from '../../public/assets/background.png';
+import { useRouter } from 'next/router';
+import { FormEvent } from 'react';
 
 const LoginPage = () => {
+  const router = useRouter();
+
+  const signInHandler = (event: FormEvent) => {
+    event.preventDefault();
+    router.replace('/');
+  };
+
   return (
     <div
       className={styles.loginPage}
@@ -71,7 +80,11 @@ const LoginPage = () => {
               </a>
             </Link>
           </div>
-          <button type="submit" className={styles['loginPage__signInBtn']}>
+          <button
+            onClick={signInHandler}
+            type="submit"
+            className={styles['loginPage__signInBtn']}
+          >
             Sign In
           </button>
         </form>
@@ -86,7 +99,7 @@ const LoginPage = () => {
         </button>
         <span className={styles['loginPage__newAccount']}>
           You don`t have an account?
-          <Link href={'/'}>
+          <Link href="/signup">
             <a className={styles['loginPage__signUp']}> Sign up</a>
           </Link>
         </span>
