@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, ChangeEvent, ImgHTMLAttributes } from 'react';
-import { User, Post } from './responseTypes';
+import { User, Post, Game } from './responseTypes';
 
 export interface SidebarProps {
   onCloseMenu: () => void;
@@ -66,15 +66,15 @@ export interface FeedProps {
 }
 
 export interface GameCardProps {
-  gameName: string;
-  gameImg: string;
-  elo: string;
-  eloImg: string;
-  roleImg: string;
-  role: string;
+  userGames: Game[];
 }
 
 export interface UserGeneralInfoProps {
+  user: User;
+  shownComponent: string;
+  setShownComponent: React.Dispatch<React.SetStateAction<"feed" | "games" | "info">>
+}
+export interface UserInfoProps {
   user: User;
 }
 

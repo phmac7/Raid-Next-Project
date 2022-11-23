@@ -4,14 +4,10 @@ import UserGameCard from '../UserGameCard/UserGameCard';
 import styles from './UserGames.module.scss';
 import { GameCardProps } from '@/models/components';
 
-const UserGames: React.FC<GameCardProps> = ({
-  gameName,
-  gameImg,
-  elo,
-  eloImg,
-  role,
-  roleImg,
-}) => {
+const UserGames: React.FC<GameCardProps> = ({ userGames }) => {
+  const gameValorant = userGames.filter(
+    (item) => item.fields.name === 'Valorant'
+  );
   return (
     <div className={styles.userGames}>
       <div className={styles.userGames__heading}>
@@ -23,14 +19,7 @@ const UserGames: React.FC<GameCardProps> = ({
         </Link>
       </div>
       <div className={styles.userGames__games}>
-        <UserGameCard
-          gameImg={gameImg}
-          gameName={gameName}
-          elo={elo}
-          eloImg={eloImg}
-          roleImg={roleImg}
-          role={role}
-        />
+        <UserGameCard userGames={gameValorant} />
       </div>
     </div>
   );

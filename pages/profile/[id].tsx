@@ -7,7 +7,12 @@ import { getEntrysByFieldIdValue } from '@/helpers/delivery';
 import contentfulTypes from '@/helpers/contentfulTypes';
 
 import { ProfilePageProps } from '@/models/pages';
-import { UserTitle, UserInfo, PostList } from '@/components/molecules';
+import {
+  UserTitle,
+  UserInfo,
+  PostList,
+  UserGames,
+} from '@/components/molecules';
 import Image from 'next/image';
 import { useStore } from '@/store';
 import Layout from '@/layout/Layout';
@@ -17,49 +22,41 @@ const ProfilePage: React.FC<ProfilePageProps> = ({
   userPosts,
   userGames,
 }) => {
-  const [component, setComponent] =
-    useState<'feed' | 'games' | 'info' | 'all'>('feed');
+  const [shownComponent, setShownComponent] =
+    useState<'feed' | 'games' | 'info'>('feed');
 
   const { storedUser, setStoredUser } = useStore();
-
-  /*
-
-  const elos = useQuery({
-    queryKey: ['userElos'],
-    queryFn: async () => {
-      const res = await (await fetch(`/api/user_plays_game`)).json();
-      const data = await res;
-      return data;
-    },
-    enabled: !!user.data?.sys.id,
-  });
-  if (elos) {
-    console.log(elos.data);
-  }
-
-  if (user.isLoading) {
-    return (
-      <div>
-        <Image src={'/assets/loading.gif'} width={500} height={500} />
-      </div>
-    );
-  }
-  if (user.isError) {
-    return <div>Something went wrong...</div>;
-  }
-
-*/
+  const { storedUserGames } = useStore();
   return (
     <Layout>
       <div className={styles.container}>
         <div className={styles.profile__user}>
-          <UserTitle user={storedUser!} />
+          <UserTitle
+            user={storedUser!}
+            shownComponent={shownComponent}
+            setShownComponent={setShownComponent}
+          />
         </div>
-        <div className={styles.profile__info}>
+        <div
+          className={`${styles.profile__info} ${
+            shownComponent === 'info' ? styles.profile__visible : ''
+          }`}
+        >
           <UserInfo user={storedUser!} />
         </div>
-        <div className={styles.profile__feed}>
+        <div
+          className={`${styles.profile__feed} ${
+            shownComponent === 'feed' ? styles.profile__visible : ''
+          }`}
+        >
           <PostList postList={userPosts} user={storedUser!} />
+        </div>
+        <div
+          className={`${styles.profile__games} ${
+            shownComponent === 'games' ? styles.profile__visible : ''
+          }`}
+        >
+          <UserGames userGames={storedUserGames!} />
         </div>
       </div>
     </Layout>

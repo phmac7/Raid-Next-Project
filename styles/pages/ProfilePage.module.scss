@@ -2,6 +2,13 @@
     display: grid;
     grid-template-columns: 5fr 3fr;
     grid-template-rows: max-content 1fr;
+    row-gap: 2rem;
+    @media screen and (max-width: 1280px) {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
 }
 
 .profile{
@@ -15,15 +22,27 @@
         grid-column-start: 2;
         grid-column-end: 3;
         justify-self: end;
+        @media screen and (max-width: 1280px) {
+            display: none;
+        }
     }
     &__feed{
         grid-row-start: 2;
         grid-row-end: 3;
+        @media screen and (max-width: 1280px) {
+            display: none;
+        }
         
     }
     &__games{
         grid-row-start: 2;
         grid-row-end: 3;
         justify-self: end;
+        @media screen and (max-width: 1280px) {
+            display: none;
+        }
+    }
+    &__visible{
+        display: block;
     }
 }
