@@ -1,8 +1,8 @@
 import { createClient } from 'contentful-management';
 
-const SPACE_ID = 'mpk7fhk3qfhm';
-const ENVIRONMENT_ID = 'MASTER';
-const ACCESS_TOKEN = 'CFPAT-9Hg5ETk_m-UOeL6SnmwX0-mEl0J2sxdf-fA-dz9ct9U';
+const SPACE_ID = process.env.SPACE_ID!;
+const ENVIRONMENT_ID = process.env.ENVIRONMENT_ID!;
+const ACCESS_TOKEN = process.env.MANAGEMENT_KEY!;
 
 export async function createContentfulManagementClient() {
   const client = createClient({

@@ -1,8 +1,8 @@
 import { createClient } from 'contentful';
 
-const SPACE_ID = 'mpk7fhk3qfhm';
-const ENVIRONMENT_ID = 'master';
-const ACCESS_TOKEN = 'VWv7sJDlvf5tdQZATDOpzz28i1Tlg_2GuapZX8HK4XA';
+const SPACE_ID = process.env.SPACE_ID!;
+const ENVIRONMENT_ID = process.env.ENVIRONMENT_ID!;
+const ACCESS_TOKEN = process.env.DELIVERY_KEY!;
 
 export async function createContentfulDeliveryClient() {
   const client = createClient({
