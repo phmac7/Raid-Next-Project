@@ -1,5 +1,5 @@
 import React, { useRef, FC, useState, useEffect, ChangeEvent } from 'react';
-import { Modal, CreatePost, Feedback } from '@/components/molecules';
+import { Modal, CreatePost, Feedback, PostList } from '@/components/molecules';
 import {
   Button,
   Dropdown,
@@ -8,13 +8,12 @@ import {
   Spinner,
 } from '@/components/atoms';
 import { createPost, getPosts } from '@/helpers/fetch';
-import { Game } from '@/models/contentfulObjects';
 import {
   DropdownOptions,
   FeedProps,
   FeddbackObject,
 } from '@/models/components';
-
+import { useStore } from '@/store';
 import { Camera } from 'phosphor-react';
 
 const avatar = {
@@ -23,7 +22,7 @@ const avatar = {
   id: 'createPost',
 };
 
-const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
+const Feed: FC<FeedProps> = ({ dropdownOptions, posts }) => {
   const [feedbackInfo, setFeedbackInfo] = useState<FeddbackObject>({
     status: 'success',
     message: '',
@@ -36,6 +35,8 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
   const [game, setGame] = useState('');
   const [message, setMessage] = useState('');
   const [selectedPhoto, setSelectedPhoto] = useState<string>('');
+
+  const { storedUser } = useStore();
 
   const modalRef = useRef<HTMLDialogElement>(null);
 

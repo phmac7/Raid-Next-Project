@@ -10,7 +10,7 @@ import { useStore } from '@/store';
 
 import Layout from '@/layout/Layout';
 
-const Home: NextPage<HomePageProps> = ({ games, user }) => {
+const Home: NextPage<HomePageProps> = ({ games, user, posts }) => {
   /*useEffect(() => {
     const fetchFucntion = async () => {
       const response = await fetch('/api/user_plays_game', {
@@ -46,7 +46,7 @@ const Home: NextPage<HomePageProps> = ({ games, user }) => {
 
   return (
     <Layout>
-      <Feed dropdownOptions={gamesDropdownOptions} />
+      <Feed dropdownOptions={gamesDropdownOptions} posts={posts} />
     </Layout>
   );
 };
@@ -55,10 +55,13 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const games = await getAllEntriesFromOneContent(contentfulTypeIds.game);
   const user = await getEntryById('4122dyrXJiL0Sr06dde27u');
 
+  const posts = await getAllEntriesFromOneContent(contentfulTypeIds.post);
+
   return {
     props: {
       games: games,
       user: user,
+      posts: posts,
     },
   };
 };

@@ -63,6 +63,7 @@ export interface DropdownOptions {
 
 export interface FeedProps {
   dropdownOptions: DropdownOptions[];
+  posts: Post[];
 }
 
 export interface GameCardProps {
@@ -72,7 +73,9 @@ export interface GameCardProps {
 export interface UserGeneralInfoProps {
   user: User;
   shownComponent: string;
-  setShownComponent: React.Dispatch<React.SetStateAction<"feed" | "games" | "info">>
+  setShownComponent: React.Dispatch<
+    React.SetStateAction<'feed' | 'games' | 'info'>
+  >;
 }
 export interface UserInfoProps {
   user: User;
