@@ -82,3 +82,8 @@ export interface PostListProps {
   postList: Post[] | [];
   user: User;
 }
+
+export interface SidebarProps {
+  isMenuOpen: boolean;
+  onCloseMenu: () => void;
+}

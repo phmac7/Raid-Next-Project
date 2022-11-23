@@ -25,6 +25,7 @@ const Header: FC<HeaderProps> = ({ userName, userPicturePath, onOpenMenu }) => {
         </button>
         <Logo />
       </div>
+
       <div className={styles['header__searchInputContainer']}>
         <MagnifyingGlass
           size={28}
@@ -38,6 +39,7 @@ const Header: FC<HeaderProps> = ({ userName, userPicturePath, onOpenMenu }) => {
           placeholder="Search for something..."
         />
       </div>
+      {/* TODO - add label to search, make it invisible*/}
       <div className={styles['header__userInfo']}>
         <span className={styles['header__userName']}>{userName}</span>
         <Image

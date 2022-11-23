@@ -8,6 +8,8 @@ import { useEffect } from 'react';
 import { HomePageProps } from '@/models/pages';
 import { useStore } from '@/store';
 
+import Layout from '@/layout/Layout';
+
 const Home: NextPage<HomePageProps> = ({ games, user }) => {
   /*useEffect(() => {
     const fetchFucntion = async () => {
@@ -31,9 +33,6 @@ const Home: NextPage<HomePageProps> = ({ games, user }) => {
 
   const { storedUser, setStoredUser } = useStore();
 
-  console.log(games);
-  console.log(user);
-
   useEffect(() => {
     setStoredUser(user);
   }, []);
@@ -43,7 +42,11 @@ const Home: NextPage<HomePageProps> = ({ games, user }) => {
     value: game.sys.id,
   }));
 
-  return <Feed dropdownOptions={gamesDropdownOptions} />;
+  return (
+    <Layout>
+      <Feed dropdownOptions={gamesDropdownOptions} />
+    </Layout>
+  );
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {

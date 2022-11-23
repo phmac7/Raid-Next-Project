@@ -1,0 +1,246 @@
+.signupPage {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: var(--font-primary);
+  overflow: scroll;
+
+  &__header {
+    background-color: transparent;
+    height: 80px;
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0 20px;
+
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+      padding: 50px;
+    }
+  }
+
+  &__signupFormContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px 30px;
+  }
+
+  &__titleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 240px;
+  }
+
+  &__signupForm {
+    width: 100%;
+    max-width: 504px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+
+    @media (min-width: 600px) {
+      font-size: 34px;
+    }
+    @media (min-width: 768px) {
+      font-size: 40px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+
+    @media (min-width: 600px) {
+      font-size: 16px;
+    }
+    @media (min-width: 768px) {
+      font-size: 18px;
+    }
+  }
+
+  &__inputDateContainer,
+  &__inputContainer {
+    min-width: 200px;
+    display: flex;
+    padding: 10px 12px;
+    align-items: center;
+    background-color: var(--color-gray-700);
+    margin-bottom: 20px;
+    border-radius: 5px;
+    @media (min-width: 600px) {
+      padding: 14px 16px;
+    }
+  }
+
+  &__label {
+    font-size: 12px;
+    margin-bottom: 10px;
+    @media (min-width: 600px) {
+      font-size: 14px;
+    }
+  }
+
+  &__icon {
+    color: var(--color-gray-500);
+  }
+
+  &__input {
+    background-color: var(--color-gray-700);
+    font-size: 16px;
+    width: 100%;
+    margin-left: 12px;
+    line-height: 24px;
+    padding-left: 10px;
+    border: none;
+    color: var(--color-gray-200);
+    @media (min-width: 600px) {
+      line-height: 34px;
+      font-size: 18px;
+    }
+    &::placeholder {
+      color: var(--color-gray-500);
+    }
+  }
+
+  &__passwordContainer {
+    @media (min-width: 600px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &__passwordInputLabelContainer {
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    @media (min-width: 600px) {
+      max-width: 210px;
+    }
+  }
+
+  &__birthday {
+    border: none;
+    background-color: transparent;
+    font-size: 12px;
+    color: var(--color-gray-500);
+    @media (min-width: 600px) {
+      font-size: 14px;
+    }
+    @media (min-width: 700px) {
+      font-size: 16px;
+    }
+  }
+
+  &__signupBtn {
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    background-color: var(--color-primary-500);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    min-width: 210px;
+    @media (min-width: 600px) {
+      padding: 12px;
+      font-size: 22px;
+    }
+  }
+
+  &__divider {
+    margin-bottom: 22px;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 1px;
+      background: rgb(194, 194, 194);
+      background: linear-gradient(
+        90deg,
+        rgb(70, 70, 70) 0%,
+        rgb(140, 140, 140) 12%,
+        rgba(255, 255, 255, 1) 25%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(255, 255, 255, 1) 75%,
+        rgb(140, 140, 140) 88%,
+        rgb(70, 70, 70) 100%
+      );
+      @media (min-width: 600px) {
+        width: 180px;
+      }
+    }
+    &::after {
+      left: -132px;
+      top: 10px;
+      @media (min-width: 600px) {
+        left: -194px;
+      }
+    }
+    &::before {
+      left: 36px;
+      top: 10px;
+    }
+  }
+
+  &__googleBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    background-color: var(--color-gray-200);
+    color: var(--color-gray-900);
+    border-radius: 5px;
+    margin-bottom: 32px;
+    width: 80%;
+    min-width: 210px;
+    @media (min-width: 600px) {
+      padding: 12px;
+      font-size: 22px;
+    }
+  }
+  &__googleIcon {
+    margin-right: 10px;
+  }
+
+  &__newAccount {
+    font-size: 12px;
+    min-width: 240px;
+    text-align: center;
+    @media (min-width: 600px) {
+      font-size: 18px;
+    }
+  }
+
+  &__signUp {
+    text-decoration: none;
+    color: var(--color-primary-500);
+    font-weight: bold;
+  }
+}
