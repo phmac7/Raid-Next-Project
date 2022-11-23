@@ -10,6 +10,7 @@ import { ProfilePageProps } from '@/models/pages';
 import { UserTitle, UserInfo, PostList } from '@/components/molecules';
 import Image from 'next/image';
 import { useStore } from '@/store';
+import Layout from '@/layout/Layout';
 
 const ProfilePage: React.FC<ProfilePageProps> = ({
   userId,
@@ -49,17 +50,19 @@ const ProfilePage: React.FC<ProfilePageProps> = ({
 
 */
   return (
-    <div className={styles.container}>
-      <div className={styles.profile__user}>
-        <UserTitle user={storedUser!} />
+    <Layout>
+      <div className={styles.container}>
+        <div className={styles.profile__user}>
+          <UserTitle user={storedUser!} />
+        </div>
+        <div className={styles.profile__info}>
+          <UserInfo user={storedUser!} />
+        </div>
+        <div className={styles.profile__feed}>
+          <PostList postList={userPosts} user={storedUser!} />
+        </div>
       </div>
-      <div className={styles.profile__info}>
-        <UserInfo user={storedUser!} />
-      </div>
-      <div className={styles.profile__feed}>
-        <PostList postList={userPosts} user={storedUser!} />
-      </div>
-    </div>
+    </Layout>
   );
 };
 
