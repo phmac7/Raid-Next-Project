@@ -87,3 +87,18 @@ export interface SidebarProps {
   isMenuOpen: boolean;
   onCloseMenu: () => void;
 }
+//Feedback types
+
+export interface FeedbackProps {
+  status: 'success' | 'error' | 'warning';
+  title: string;
+  message: string;
+  onClose: () => void;
+}
+
+export interface FeddbackObject {
+  status: 'success' | 'error' | 'warning';
+  title: string;
+  message: string;
+  show: boolean;
+}

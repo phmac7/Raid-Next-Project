@@ -2,6 +2,11 @@
   display: grid;
   grid-template-columns: max-content minmax(auto, 70%) max-content;
 
+  @media (max-width: 768px) {
+    grid-template-columns: 100%;
+    margin: 0 2rem;
+  }
+
   &__main {
     background-color: var(--color-gray-700);
     padding: 3rem 3rem;

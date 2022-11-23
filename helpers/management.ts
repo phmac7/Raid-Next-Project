@@ -18,6 +18,7 @@ export async function createEntry(contentTypeId: string, entryInfo: any) {
   const environment = await createContentfulManagementClient();
   const insertedEntry = await environment.createEntry(contentTypeId, entryInfo);
   await insertedEntry.publish();
+  return insertedEntry;
 }
 
 export async function uploadAsset(fileEntry: any) {

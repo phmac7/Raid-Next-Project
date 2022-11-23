@@ -1,9 +1,19 @@
 import React, { useRef, FC, useState, useEffect, ChangeEvent } from 'react';
-import { Modal, CreatePost } from '@/components/molecules';
-import { Button, Dropdown, TextArea, FileInput } from '@/components/atoms';
+import { Modal, CreatePost, Feedback } from '@/components/molecules';
+import {
+  Button,
+  Dropdown,
+  TextArea,
+  FileInput,
+  Spinner,
+} from '@/components/atoms';
 import { createPost, getPosts } from '@/helpers/fetch';
 import { Game } from '@/models/contentfulObjects';
-import { DropdownOptions, FeedProps } from '@/models/components';
+import {
+  DropdownOptions,
+  FeedProps,
+  FeddbackObject,
+} from '@/models/components';
 
 import { Camera } from 'phosphor-react';
 
@@ -14,12 +24,42 @@ const avatar = {
 };
 
 const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
+  const [feedbackInfo, setFeedbackInfo] = useState<FeddbackObject>({
+    status: 'success',
+    message: '',
+    title: '',
+    show: false,
+  });
+  const [allGames, setAllGames] = useState<DropdownOptions[]>(dropdownOptions);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const [game, setGame] = useState('');
   const [message, setMessage] = useState('');
-  const [allGames, setAllGames] = useState<DropdownOptions[]>(dropdownOptions);
   const [selectedPhoto, setSelectedPhoto] = useState<string>('');
 
   const modalRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    let timerFeedback: NodeJS.Timeout;
+
+    if (feedbackInfo.show) {
+      timerFeedback = setTimeout(() => {
+        setFeedbackInfo((prevState) => ({ ...prevState, show: false }));
+      }, 5000);
+    }
+
+    return () => {
+      clearTimeout(timerFeedback);
+    };
+  }, [feedbackInfo.show]);
+
+  const closeFeedbackHandler = () => {
+    setFeedbackInfo((prevState) => ({ ...prevState, show: false }));
+  };
+
+  const showFeedbackHandler = () => {
+    setFeedbackInfo((prevState) => ({ ...prevState, show: true }));
+  };
 
   const onChangeFile = async (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.files?.length) {
@@ -27,6 +67,28 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
       console.log();
       setSelectedPhoto(file);
     }
+  };
+
+  const openModalHandler = () => {
+    modalRef.current?.showModal();
+  };
+
+  const closeModalHandler = () => {
+    modalRef.current?.close();
+  };
+
+  const addPostHandler = async () => {
+    closeModalHandler();
+    setIsLoading(true);
+    const response = await createPost(game, message, selectedPhoto);
+    const feedbackObject = {
+      title: response.title,
+      message: response.message,
+      status: response.status,
+      show: true,
+    };
+    setFeedbackInfo(feedbackObject);
+    setIsLoading(false);
   };
 
   const modalHeader = (
@@ -57,23 +119,9 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
         onChange={onChangeFile}
         value={selectedPhoto}
       />
-      <Button
-        label="Create Post"
-        onClick={() => {
-          createPost(game, message, selectedPhoto);
-          closeModalHandler();
-        }}
-      />
+      <Button label="Create Post" onClick={addPostHandler} />
     </>
   );
-
-  const openModalHandler = () => {
-    modalRef.current?.showModal();
-  };
-
-  const closeModalHandler = () => {
-    modalRef.current?.close();
-  };
 
   const button = {
     label: 'Create Post',
@@ -90,6 +138,16 @@ const Feed: FC<FeedProps> = ({ dropdownOptions }) => {
         main={modalMain}
         footer={modalFooter}
       />
+
+      {feedbackInfo.show && (
+        <Feedback
+          title={feedbackInfo.title}
+          message={feedbackInfo.message}
+          status={feedbackInfo.status}
+          onClose={closeFeedbackHandler}
+        />
+      )}
+      {isLoading && <Spinner />}
     </>
   );
 };
