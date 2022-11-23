@@ -61,7 +61,7 @@ const menuItems = [
   {
     id: 8,
     title: 'Logout',
-    href: '/',
+    href: '/login',
     icon: <SignOut size={24} weight="bold" />,
   },
 ];
