@@ -1,7 +1,7 @@
 import { SidebarItem } from '@/components/molecules';
 import { SidebarProps } from '@/models/components';
 import { FC } from 'react';
-import styles from './sidebar.module.scss';
+import styles from './Sidebar.module.scss';
 
 import {
   Article,
