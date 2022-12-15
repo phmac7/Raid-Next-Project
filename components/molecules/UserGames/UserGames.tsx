@@ -1,13 +1,13 @@
-import Link from 'next/link';
-import React from 'react';
-import UserGameCard from '../UserGameCard/UserGameCard';
-import styles from './UserGames.module.scss';
-import { GameCardProps } from '@/models/components';
+import Link from "next/link";
+import React from "react";
+import UserGameCard from "../UserGameCard/UserGameCard";
+import styles from "./UserGames.module.scss";
+import { GameCardProps } from "@/models/components";
+import { Game } from "@/models/responseTypes";
 
 const UserGames: React.FC<GameCardProps> = ({ userGames }) => {
-  const gameValorant = userGames.filter(
-    (item) => item.fields.name === 'Valorant'
-  );
+  console.log(userGames);
+
   return (
     <div className={styles.userGames}>
       <div className={styles.userGames__heading}>
@@ -19,7 +19,9 @@ const UserGames: React.FC<GameCardProps> = ({ userGames }) => {
         </Link>
       </div>
       <div className={styles.userGames__games}>
-        <UserGameCard userGames={gameValorant} />
+        {userGames.map((el: any, i) => (
+          <UserGameCard key={i} userGames={el} />
+        ))}
       </div>
     </div>
   );
