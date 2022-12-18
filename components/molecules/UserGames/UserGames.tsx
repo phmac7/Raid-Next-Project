@@ -6,9 +6,7 @@ import { GameCardProps } from "@/models/components";
 import { Game } from "@/models/responseTypes";
 
 const UserGames: React.FC<GameCardProps> = ({ userGames }) => {
-  console.log(userGames);
-
-  return (
+    return (
     <div className={styles.userGames}>
       <div className={styles.userGames__heading}>
         <span className={styles.userGames__heading__title}>My Games</span>

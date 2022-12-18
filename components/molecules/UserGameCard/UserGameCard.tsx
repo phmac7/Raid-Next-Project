@@ -4,7 +4,6 @@ import styles from "./UserGameCard.module.scss";
 import { GameCardProps } from "@/models/components";
 
 const UserGameCard: React.FC<GameCardProps> = ({ userGames }) => {
-  console.log(userGames);
   return (
     <div className={styles.card}>
       <div className={styles.card__heading}>

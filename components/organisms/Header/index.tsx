@@ -14,7 +14,6 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({ onOpenMenu }) => {
   const { storedUser, setStoredUser } = useStore();
-  console.log(storedUser);
 
   return (
     <nav className={styles.header}>

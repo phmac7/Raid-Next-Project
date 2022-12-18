@@ -59,7 +59,6 @@ const Feed: FC<FeedProps> = ({ dropdownOptions, posts }) => {
   const onChangeFile = async (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.files?.length) {
       const file = URL.createObjectURL(event.target.files[0]);
-      console.log();
       setSelectedPhoto(file);
     }
   };
