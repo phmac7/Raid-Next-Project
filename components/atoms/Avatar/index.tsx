@@ -8,7 +8,7 @@ const Avatar: React.FC<AvatarType> = ({ avatar, alt }) => {
   return (
     <Image
       className={styles.avatar}
-      src={avatar}
+      src={avatar ? avatar : '/public/assets/loading.gif'}
       alt={alt}
       height={50}
       width={50}

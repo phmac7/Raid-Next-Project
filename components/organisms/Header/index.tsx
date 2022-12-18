@@ -14,6 +14,7 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({ onOpenMenu }) => {
   const { storedUser, setStoredUser } = useStore();
+console.log(storedUser);
 
   return (
     <nav className={styles.header}>
@@ -50,7 +51,7 @@ const Header: FC<HeaderProps> = ({ onOpenMenu }) => {
           src={
             storedUser
               ? 'https://' + storedUser!.fields.profilePicture.fields.file.url
-              : ''
+              : '/public/assets/loading.gif'
           }
           alt={`picture of ${storedUser?.fields.name}`}
           width="60px"
