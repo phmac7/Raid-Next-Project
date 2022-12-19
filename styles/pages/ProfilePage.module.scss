@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 5fr 3fr;
     grid-template-rows: max-content 1fr;
-    row-gap: 2rem;
+    grid-gap: 2rem;
     @media screen and (max-width: 1280px) {
         display: flex;
         flex-direction: column;
@@ -19,9 +19,11 @@
     }
 
     &__info {
+        width: 100%;
+        margin: auto;
         grid-column-start: 2;
         grid-column-end: 3;
-        justify-self: end;
+        justify-self: center;
         @media screen and (max-width: 1280px) {
             display: none;
         }
@@ -35,9 +37,10 @@
         
     }
     &__games{
+        width: 100%;
         grid-row-start: 2;
         grid-row-end: 3;
-        justify-self: end;
+        justify-self: center;
         @media screen and (max-width: 1280px) {
             display: none;
         }
