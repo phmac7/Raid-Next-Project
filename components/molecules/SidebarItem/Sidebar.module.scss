@@ -43,7 +43,8 @@
   color: var(--color-gray-400);
   cursor: not-allowed;
   text-decoration: line-through;
-
+  pointer-events: none;
+  
   &:hover {
   }
 }
