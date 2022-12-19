@@ -24,6 +24,7 @@
                 &Text{
                     color: var(--color-gray-400);
                     font-size: 1.6rem;
+                    margin-right: 5px;
                 }
             }
         }
@@ -33,12 +34,14 @@
         padding: 1rem 0;
         display: flex;
         align-items: center;
+        gap: 3%;
         &__title{
             font-size: 1.4rem;
         }
 
         &__info{
             display:flex;
+            gap: 7.5%;
             align-items: center;
             color: var(--color-gray-400);
             font-size: 1.2rem;

@@ -56,7 +56,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({
             shownComponent === 'games' ? styles.profile__visible : ''
           }`}
         >
-          <UserGames userGames={storedUserGames!} />
+          <UserGames userGames={userGames} />
         </div>
       </div>
     </Layout>
