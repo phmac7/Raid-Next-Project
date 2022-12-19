@@ -125,7 +125,7 @@ const Feed: FC<FeedProps> = ({ dropdownOptions, posts }) => {
   const avatar = {
     avatar: storedUser
       ? 'https://' + storedUser!.fields.profilePicture.fields.file.url
-      : '',
+      : '/public/assets/loading.gif',
     id: 'createPost',
   };
 
