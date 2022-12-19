@@ -1,7 +1,7 @@
-import { SidebarItem } from '@/components/molecules';
-import { SidebarProps } from '@/models/components';
-import { FC } from 'react';
-import styles from './Sidebar.module.scss';
+import { SidebarItem } from "@/components/molecules";
+import { SidebarProps } from "@/models/components";
+import { FC } from "react";
+import styles from "./Sidebar.module.scss";
 
 import {
   Article,
@@ -13,56 +13,64 @@ import {
   Gear,
   SignOut,
   X,
-} from 'phosphor-react';
+} from "phosphor-react";
 
 const menuItems = [
   {
     id: 1,
-    title: 'Feed',
-    href: '/',
+    title: "Feed",
+    href: "/",
     icon: <Article size={24} weight="bold" />,
+    isDisabled: false,
   },
   {
     id: 2,
-    title: 'Communities',
-    href: '/',
+    title: "Communities",
+    href: "/",
     icon: <Users size={24} weight="bold" />,
+    isDisabled: true,
   },
   {
     id: 3,
-    title: 'Matches',
-    href: '/',
+    title: "Matches",
+    href: "/",
     icon: <Clock size={24} weight="bold" />,
+    isDisabled: true,
   },
   {
     id: 4,
-    title: 'Messages',
-    href: '/',
+    title: "Messages",
+    href: "/",
     icon: <ChatsCircle size={24} weight="bold" />,
+    isDisabled: true,
   },
   {
     id: 5,
-    title: 'Notifications',
-    href: '/',
+    title: "Notifications",
+    href: "/",
     icon: <Bell size={24} weight="bold" />,
+    isDisabled: true,
   },
   {
     id: 6,
-    title: 'Profile',
-    href: '/profile',
+    title: "Profile",
+    href: "/profile",
     icon: <User size={24} weight="bold" />,
+    isDisabled: false,
   },
   {
     id: 7,
-    title: 'Settings',
-    href: '/',
+    title: "Settings",
+    href: "/",
     icon: <Gear size={24} weight="bold" />,
+    isDisabled: true,
   },
   {
     id: 8,
-    title: 'Logout',
-    href: '/login',
+    title: "Logout",
+    href: "/login",
     icon: <SignOut size={24} weight="bold" />,
+    isDisabled: true,
   },
 ];
 
@@ -73,16 +81,17 @@ const renderList = (list: any[]) =>
       title={item.title}
       href={item.href}
       icon={item.icon}
+      isDisabled={item.isDisabled}
     />
   ));
 
 const Sidebar: FC<SidebarProps> = ({ isMenuOpen, onCloseMenu }) => {
   return (
-    <div className={styles[`sidebar${isMenuOpen ? '--open' : ''}`]}>
-      <button className={styles['sidebar__button']} onClick={onCloseMenu}>
+    <div className={styles[`sidebar${isMenuOpen ? "--open" : ""}`]}>
+      <button className={styles["sidebar__button"]} onClick={onCloseMenu}>
         <X size={40} />
       </button>
-      <ul className={styles['sidebar__list']}>{renderList(menuItems)}</ul>
+      <ul className={styles["sidebar__list"]}>{renderList(menuItems)}</ul>
     </div>
   );
 };

@@ -26,8 +26,24 @@
       background-color: var(--color-primary-500);
       color: var(--color-gray-200);
     }
+    
+    &.disabled-link {
+      &:hover {
+        background-color: var(--color-gray-400);
+        color: var(--color-gray-900);
+      }
+    }
   }
   &__linkText {
     margin-left: 10px;
+  }
+}
+
+.disabled-link {
+  color: var(--color-gray-400);
+  cursor: not-allowed;
+  text-decoration: line-through;
+
+  &:hover {
   }
 }
