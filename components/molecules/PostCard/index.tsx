@@ -29,8 +29,6 @@ const PostCard = ({
   //   // ...backlog
   // }
 
-  console.log(postImage);
-
   return (
     <section className={styles.postCard}>
       <header className={styles.postCard__header}>

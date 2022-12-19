@@ -6,8 +6,6 @@ import { PostListProps } from '@/models/components';
 import { Post } from '@/models/responseTypes';
 
 const PostList: React.FC<PostListProps> = ({ postList }) => {
-  console.log(postList[0].fields.media?.fields.file.url);
-
   return (
     <div className={styles.postList}>
       {postList.map((post: Post, i: number) => (

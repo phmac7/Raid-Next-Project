@@ -67,7 +67,7 @@ export interface FeedProps {
 }
 
 export interface GameCardProps {
-  userGames: Game[];
+  userGames: any;
 }
 
 export interface UserGeneralInfoProps {
